@@ -1,0 +1,38 @@
+/** 
+    The purpose of this file is to provide style for a Natural Burial website for Mary-Ann.
+
+    Authors: Cole Turner 
+*/
+
+/***** HTML Elements  *****/
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    background-color:gainsboro;
+}
+
+h1 {
+    padding-bottom:0px
+}
+
+/***** User defined class styles *****/
+
+.mainContent {
+    background-color:white;
+    width: 30%;
+    border-color:darkslategray;
+    border: 1px solid darkslategray;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 5%;
+}
+
+.titleSection {
+    background-color:snow;
+}
+
+/******* User defined id styles ******/
+/* none */

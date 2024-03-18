@@ -1,38 +1,73 @@
+<!-- 
+    The purpose of this file is to provide structure for a Natural Burial website for Mary-Ann.
+
+    Authors: Cole Turner 
+-->
+
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Links to style.css-->
+    <link rel="stylesheet" href="style.css">
+
     <title>Natural Burial</title>
 </head>
-<body>
-
-    <!--  Heading -->
-    <header>
-        <h1>Natural Burial</h1>
-    </header>
-    <main>
-        <form>
-            <h4>
-                Book here
-            </h4>
-            <div>
-                <label for="firstName">First Name</label>
-                <input type="text" name="firstName" id="firstName">
-            </div>
-            <div>
-                <label for="lastName">Last Name</label>
-                <input type="text" name="lastName" id="firstName">
-            </div>
-            <div>
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email">
-            </div>
-
-            <button>Submit</button>
-        </form>
-
-    </main>
+<body> 
     
+    <div class="mainContent">
+        <div class="titleSection">
+            <h1>Saint Margarets Bay Natural Burial</h1>
+            <h3>Burial Submission Form</h3> 
+        </div>
+        <form id="userInfo">
+            
+            <!-- Could put these in divs & alternate colors-->
+            <label for="firstName">First Name:</label> <br>
+            <input type="text" name="firstName" id="firstName" required> <br>
+            
+            <label for="lastName">Last Name:</label> <br>
+            <input type="text" name="lastName" id="firstName" required> <br>
+
+            <label for="birthDate">Date of Birth:</label> <br>
+            <input type="date" name="birthDate" id="birthDate" required> <br> <br>
+            
+            <label for="inscription">Inscription:</label> <br>
+            <textarea name="inscription" form="userInfo" id="inscription" maxlength="30"></textarea> <br> <br>
+
+            <label>Type of Burial Marker?</label> <br>
+            <input type="radio" name="marker" id="stone" value="Stone" required> 
+            <label for="stone">Stone</label> <br>
+            <input type="radio" name="marker" id="pineTree" value="Pine Tree">
+            <label for="pineTree">Pine Tree</label> <br>
+            <input type="radio" name="marker" id="birchTree" value="Birch Tree">
+            <label for="oakTree">Birch Tree</label> <br>
+            <input type="radio" name="marker" id="woodCross" value="Wood Cross"> 
+            <label for="woodCross">Natural Wood Cross</label> <br> <br>
+
+            <label>Resting Location?</label> <br>
+            <input type="radio" name="location" id="birchForest" value="Birch Forest" required>
+            <label for="birchForest">Birch Forest</label> <br>
+            <input type="radio" name="location" id="pineForest" value="Pine Forest">
+            <label for="pineForest">Pine Forest</label> <br>
+            <input type="radio" name="location" id="water" value="Water">
+            <label for="water">Overlooking the Water</label> <br>
+
+            <br>
+            <label for="email">Contact Email Address: </label> <br>
+            <input type="email" name="email" id="email" required> <br>
+            <br>
+
+            <label for="notes">Any notes?</label> <br>
+            <textarea name="notes" form="userInfo" id="notes" maxlength="100"></textarea> <br> <br>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    
+
 </body>
 </html>
