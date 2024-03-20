@@ -1,9 +1,8 @@
 <!-- 
-    The purpose of this file is to provide structure for a Natural Burial website for Mary-Ann.
+    The purpose of this file is to provide structure for a Natural Burial form website for Mary-Ann.
 
     Authors: Cole Turner 
 -->
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +24,7 @@
         </div>
         <form id="userInfo">
             
-            <!-- Could put these in divs & alternate colors-->
+            <!-- Could put these in divs & alternate shades-->
             <label for="firstName">First Name:</label> <br>
             <input type="text" name="firstName" id="firstName" required> <br>
             
@@ -60,7 +59,7 @@
 
             <!-- Burial Preference from Marko's code-->
             <label>Burial Preferences?</label><br>
-            <input type="radio" id="shroud" name="burial_method" value="shroud">
+            <input type="radio" id="shroud" name="burial_method" value="shroud" required> 
             <label for="shroud">Shroud Burial</label><br>
             <input type="radio" id="biodegradable_coffin" name="burial_method" value="biodegradable_coffin">
             <label for="biodegradable_coffin">Biodegradable Coffin Burial</label><br>
@@ -84,7 +83,5 @@
             <button type="submit">Submit</button>
         </form>
     </div>
-    
-
 </body>
 </html>
