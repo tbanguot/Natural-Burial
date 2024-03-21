@@ -1,38 +1,184 @@
 <!DOCTYPE html>
+<!-- FILE HEADER
+Purpose: This HTML document provides the structure for a natural burial service form,
+allowing users to enter personal details and select options related to the burial process.
+Author: [Sameh Noor] (A00476742) -->
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Natural Burial</title>
-</head>
-<body>
+    <!-- Link to the external CSS file for styling the webpage -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- The main container for the form, which structures the content and layout -->
+    <div class="container">
+      <!-- The heading of the form, which provides context to the user -->
+      <h1>Natural Burial Form!!</h1>
+      <!-- Input field for the user's first name -->
+      <div>
+        <label for="name">Enter your first name: </label><br />
+        <input type="text" id="name" name="first_name" required /><br />
+      </div>
 
-    <!--  Heading -->
-    <header>
-        <h1>Natural Burial!!</h1>
-    </header>
-    <main>
-        <form>
-            <h4>
-                Book here
-            </h4>
-            <div>
-                <label for="firstName">First Name</label>
-                <input type="text" name="firstName" id="firstName">
-            </div>
-            <div>
-                <label for="lastName">Last Name</label>
-                <input type="text" name="lastName" id="firstName">
-            </div>
-            <div>
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email">
-            </div>
+      <!-- Input field for the user's date of birth -->
+      <div>
+        <label for="DOB">Enter your date of birth:</label><br />
+        <input type="text" id="DOB" name="date_of_birth" required /><br />
+      </div>
 
-            <button>Submit</button>
-        </form>
+      <!-- Input field for the user's phone number -->
+      <div>
+        <label for="phone">Enter your phone number: </label><br />
+        <input type="text" id="phone" name="phone_number" required /><br />
+      </div>
 
-    </main>
-    
-</body>
+      <!-- Input field for the user's email address -->
+      <div>
+        <label for="email">Enter your email address:</label><br />
+        <input type="text" id="email" name="email_address" required /><br />
+      </div>
+
+      <!-- Input field for the user's current mailing address -->
+      <div>
+        <label for="address">Enter your current mailing address:</label><br />
+        <input type="text" id="address" name="mailing_address" required /><br />
+      </div>
+
+      <!-- Input field for the number of burial plots the user would like to book -->
+      <div>
+        <label for="plots"
+          >Enter the number of plots you would like to book:</label
+        ><br />
+        <input type="text" id="plots" name="number_of_plots" required />
+      </div>
+      <br />
+
+      <!-- Radio button selection for the marker option -->
+      <div class="radio-group">
+        <label>Select your markers option:</label><br />
+        <input type="radio" id="tree" name="marker_option" value="tree" />
+        <label for="tree">Tree Planting</label><br />
+        <input type="radio" id="stone" name="marker_option" value="stone" />
+        <label for="stone">Flat Stone Marker</label><br />
+        <input type="radio" id="wooden" name="marker_option" value="wooden" />
+        <label for="wooden">Wooden Marker</label><br />
+        <input
+          type="radio"
+          id="wildflower"
+          name="marker_option"
+          value="wildflower"
+        />
+        <label for="wildflower">Wildflower Meadow</label><br />
+        <br />
+      </div>
+
+      <!-- Radio button selection for the burial method -->
+      <div class="radio-group">
+        <label>Select a burial method:</label><br />
+        <input type="radio" id="shroud" name="burial_method" value="shroud" />
+        <label for="shroud">Shroud Burial</label><br />
+        <input
+          type="radio"
+          id="biodegradable_coffin"
+          name="burial_method"
+          value="biodegradable_coffin"
+        />
+        <label for="biodegradable_coffin">Biodegradable Coffin Burial</label
+        ><br />
+        <input
+          type="radio"
+          id="tree_burial"
+          name="burial_method"
+          value="tree_burial"
+        />
+        <label for="tree_burial">Tree or Seed Pod Burial</label><br />
+        <input
+          type="radio"
+          id="conservation"
+          name="burial_method"
+          value="conservation"
+        />
+        <label for="conservation">Conservation Burial</label><br />
+        <br />
+      </div>
+
+      <!-- Radio button selection for the grave location preference -->
+      <div class="radio-group">
+        <label>Select your grave location preference:</label><br />
+        <input type="radio" id="water" name="grave_location" value="water" />
+        <label for="water">Near the shoreline</label><br />
+        <input
+          type="radio"
+          id="lookoff"
+          name="grave_location"
+          value="lookoff"
+        />
+        <label for="lookoff">Looking out at St. Margaret's Bay</label><br />
+        <input type="radio" id="birch" name="grave_location" value="birch" />
+        <label for="birch">By the yellow birch forest</label><br /><br />
+      </div>
+
+      <!-- Radio button selection for the inscription option on the grave marker -->
+      <div class="radio-group">
+        <label>Select an inscription option:</label><br />
+        <input
+          type="radio"
+          id="engraved_stone"
+          name="inscription_option"
+          value="engraved_stone"
+        />
+        <label for="engraved_stone">Engraved Stone</label><br />
+        <input
+          type="radio"
+          id="wooden_plaque"
+          name="inscription_option"
+          value="wooden_plaque"
+        />
+        <label for="wooden_plaque">Wooden Plaque</label><br />
+        <input
+          type="radio"
+          id="natural_carving"
+          name="inscription_option"
+          value="natural_carving"
+        />
+        <label for="natural_carving">Natural Carving</label><br />
+        <input
+          type="radio"
+          id="living_memorial"
+          name="inscription_option"
+          value="living_memorial"
+        />
+        <label for="living_memorial">Living Memorial</label><br />
+        <br />
+      </div>
+
+      <!-- Textarea for note to loved ones -->
+      <div>
+        <label for="wishes">Please type in any wishes to loved ones:</label>
+        <br />
+        <textarea id="wishes" name="wishes" rows="4" cols="30"></textarea
+        ><br /><br />
+      </div>
+
+      <!-- Textarea for additional notes: Allows users to enter any other relevant information or special requests -->
+      <div>
+        <label for="notes"
+          >Please type in any additional notes you would like to be
+          considered:</label
+        >
+        <br />
+        <textarea
+          id="notes"
+          name="additional_notes"
+          rows="4"
+          cols="30"
+        ></textarea>
+      </div>
+      <br />
+      <button type="button" id="submitButton">Submit Form</button>
+    </div>
+  </body>
 </html>
