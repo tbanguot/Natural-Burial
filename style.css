@@ -1,3 +1,10 @@
+/* FILE HEADER
+Purpose: This CSS file provides styling for the Natural Burial Service web form, 
+applying visual enhancements such as layout design, fonts, colors, and background images 
+for better user experience and readability.
+Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bhalla, Marko Ostrovista] */
+
+/* HTML ELEMENTS STYLES */
 body {
     font-family: Arial;
     display: flex;
@@ -10,7 +17,6 @@ body {
     background-size: cover;
     }
     
-    
     .container {
     width: 50%;
     height: 100%;
@@ -20,13 +26,11 @@ body {
     flex-direction: column;
     }
     
-    
     h1 {
     color: #333;
     text-align: center;
     width: 100%;
     }
-    
     
     div, .radio-group {
     width: 50%;
@@ -34,12 +38,10 @@ body {
     display: flexbox;
     }
     
-    
     .radio-group {
     margin-left: 70px;
     }
 
-    
     input[type="text"]{
     width: 100%;
     padding: 12px;
@@ -49,11 +51,9 @@ body {
     text-align: center;
     }
     
-    
     input[type="radio"] {
     transform: scale(1.5);
     }
-    
     
     button {
     background-color: #5cb85c;
