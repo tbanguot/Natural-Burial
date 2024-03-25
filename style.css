@@ -12,7 +12,7 @@ body {
     
     
     .container {
-    width: 50%;
+    width: 80%;
     height: 100%;
     background-color: whitesmoke;
     display: flex;
@@ -51,7 +51,9 @@ body {
     
     
     input[type="radio"] {
-    transform: scale(1.5);
+        width: 100px;
+        height: 100px;
+        
     }
     
     
@@ -64,5 +66,15 @@ body {
     display: block;
     font-size: 25px;
     width: 70%;
+    }
+
+    label {
+        font-size: 100px;
+    }
+    input {
+        font-size: 100px;
+    }
+    button {
+      font-size: 100px;  
     }
     
