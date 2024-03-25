@@ -1,38 +1,67 @@
-/** 
-    The purpose of this file is to provide style for a Natural Burial website for Mary-Ann.
-
-    Authors: Cole Turner 
-*/
-
-/***** HTML Elements  *****/
-
 body {
+    font-family: Arial;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 50%;
-    background-color:gainsboro;
-}
+    background-image: url(Images/Flower.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    }
+    
+    
+    .container {
+    width: 50%;
+    height: 100%;
+    background-color: whitesmoke;
+    display: flex;
+    padding: 0.25rem;
+    flex-direction: column;
+    }
+    
+    
+    h1 {
+    color: #333;
+    text-align: center;
+    width: 100%;
+    }
+    
+    
+    div, .radio-group {
+    width: 50%;
+    align-items: center;
+    display: flexbox;
+    }
+    
+    
+    .radio-group {
+    margin-left: 70px;
+    }
 
-h1 {
-    padding-bottom:0px
-}
-
-/***** User defined class styles *****/
-
-.mainContent {
-    background-color:white;
-    width: 30%;
-    border-color:darkslategray;
-    border: 1px solid darkslategray;
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-bottom: 5%;
-}
-
-.titleSection {
-    background-color:snow;
-}
-
-/******* User defined id styles ******/
-/* none */
+    
+    input[type="text"]{
+    width: 100%;
+    padding: 12px;
+    display: block;
+    border: 1px solid black;
+    border-radius: 4px;
+    text-align: center;
+    }
+    
+    
+    input[type="radio"] {
+    transform: scale(1.5);
+    }
+    
+    
+    button {
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    display: block;
+    font-size: 25px;
+    width: 70%;
+    }
