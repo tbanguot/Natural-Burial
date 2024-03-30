@@ -11,45 +11,57 @@ Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bha
     <title>Natural Burial</title>
     <!-- Link to the external CSS file for styling the webpage -->
     <link rel="stylesheet" href="style.css" />
+    <script src="TTS.js"></script>
   </head>
   <body>
     <!-- The main container for the form, which structures the content and layout -->
     <div class="container">
       <!-- The heading of the form, which provides context to the user -->
       <h1>Natural Burial Form</h1>
+      <div><audio id="audioPlayer"></audio></div>
       <!-- Input field for the user's first name -->
       <div>
-        <label for="name">Enter your first name: </label><br />
+        <label for="name" onclick="playText('name')"
+          >Enter your first name: </label
+        ><br />
         <input type="text" id="name" name="first_name" required /><br />
       </div>
 
       <!-- Input field for the user's date of birth -->
       <div>
-        <label for="DOB">Enter your date of birth:</label><br />
-        <input type="text" id="DOB" name="date_of_birth" required /><br />
+        <label for="dop" onclick="playText('dop')"
+          >Enter your date of birth:</label
+        ><br />
+        <input type="text" id="dop" name="date_of_birth" required /><br />
       </div>
 
       <!-- Input field for the user's phone number -->
       <div>
-        <label for="phone">Enter your phone number: </label><br />
+        <label for="phone" onclick="playText('phone_number')"
+          >Enter your phone number: </label
+        ><br />
         <input type="text" id="phone" name="phone_number" required /><br />
       </div>
 
       <!-- Input field for the user's email address -->
       <div>
-        <label for="email">Enter your email address:</label><br />
+        <label for="email" onclick="playText('email')"
+          >Enter your email address:</label
+        ><br />
         <input type="text" id="email" name="email_address" required /><br />
       </div>
 
       <!-- Input field for the user's current mailing address -->
       <div>
-        <label for="address">Enter your current mailing address:</label><br />
+        <label for="address" onclick="playText('address')"
+          >Enter your current mailing address:</label
+        ><br />
         <input type="text" id="address" name="mailing_address" required /><br />
       </div>
 
       <!-- Input field for the number of burial plots the user would like to book -->
       <div>
-        <label for="plots"
+        <label for="plots" onclick="playText('plots')"
           >Enter the number of plots you would like to book:</label
         ><br />
         <input type="text" id="plots" name="number_of_plots" required />
@@ -58,35 +70,48 @@ Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bha
 
       <!-- Radio button selection for the marker option -->
       <div class="radio-group">
-        <label>Select your markers option:</label><br />
+        <label onclick="playText('markers_option')"
+          >Select your markers option:</label
+        ><br />
         <input type="radio" id="tree" name="marker_option" value="tree" />
-        <label for="tree">Tree Planting</label><br />
+        <label for="tree" onclick="playText('tree_planting')"
+          >Tree Planting</label
+        ><br />
         <input type="radio" id="stone" name="marker_option" value="stone" />
-        <label for="stone">Flat Stone Marker</label><br />
+        <label for="stone" onclick="playText('flat_stone')"
+          >Flat Stone Marker</label
+        ><br />
         <input type="radio" id="wooden" name="marker_option" value="wooden" />
-        <label for="wooden">Wooden Marker</label><br />
+        <label for="wooden" onclick="playText('wooden')">Wooden Marker</label
+        ><br />
         <input
           type="radio"
           id="wildflower"
           name="marker_option"
           value="wildflower"
         />
-        <label for="wildflower">Wildflower Meadow</label><br />
+        <label for="wildflower" onclick="playText('wildflower')"
+          >Wildflower Meadow</label
+        ><br />
         <br />
       </div>
 
       <!-- Radio button selection for the burial method -->
       <div class="radio-group">
-        <label>Select a burial method:</label><br />
+        <label onclick="playText('burial_method')"
+          >Select a burial method:</label
+        ><br />
         <input type="radio" id="shroud" name="burial_method" value="shroud" />
-        <label for="shroud">Shroud Burial</label><br />
+        <label for="shroud" onclick="playText('shroud')">Shroud Burial</label
+        ><br />
         <input
           type="radio"
           id="biodegradable_coffin"
           name="burial_method"
           value="biodegradable_coffin"
         />
-        <label for="biodegradable_coffin">Biodegradable Coffin Burial</label
+        <label for="biodegradable_coffin" onclick="playText('biodegradable')"
+          >Biodegradable Coffin Burial</label
         ><br />
         <input
           type="radio"
@@ -94,82 +119,104 @@ Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bha
           name="burial_method"
           value="tree_burial"
         />
-        <label for="tree_burial">Tree or Seed Pod Burial</label><br />
+        <label for="tree_burial" onclick="playText('tree_burial')"
+          >Tree or Seed Pod Burial</label
+        ><br />
         <input
           type="radio"
           id="conservation"
           name="burial_method"
           value="conservation"
         />
-        <label for="conservation">Conservation Burial</label><br />
+        <label for="conservation" onclick="playText('conservation')"
+          >Conservation Burial</label
+        ><br />
         <br />
       </div>
 
       <!-- Radio button selection for the grave location preference -->
       <div class="radio-group">
-        <label>Select your grave location preference:</label><br />
+        <label onclick="playText('location_pref')"
+          >Select your grave location preference:</label
+        ><br />
         <input type="radio" id="water" name="grave_location" value="water" />
-        <label for="water">Near the shoreline</label><br />
+        <label for="water" onclick="playText('shoreline')"
+          >Near the shoreline</label
+        ><br />
         <input
           type="radio"
           id="lookoff"
           name="grave_location"
           value="lookoff"
         />
-        <label for="lookoff">Looking out at St. Margaret's Bay</label><br />
+        <label for="lookoff" onclick="playText('bay')"
+          >Looking out at St. Margaret's Bay</label
+        ><br />
         <input type="radio" id="birch" name="grave_location" value="birch" />
-        <label for="birch">By the yellow birch forest</label><br /><br />
+        <label for="birch" onclick="playText('yellow_forest')"
+          >By the yellow birch forest</label
+        ><br /><br />
       </div>
 
       <!-- Radio button selection for the inscription option on the grave marker -->
       <div class="radio-group">
-        <label>Select an inscription option:</label><br />
+        <label onclick="playText('inscription_option')"
+          >Select an inscription option:</label
+        ><br />
         <input
           type="radio"
           id="engraved_stone"
           name="inscription_option"
           value="engraved_stone"
         />
-        <label for="engraved_stone">Engraved Stone</label><br />
+        <label for="engraved_stone" onclick="playText('engraved_stone')"
+          >Engraved Stone</label
+        ><br />
         <input
           type="radio"
           id="wooden_plaque"
           name="inscription_option"
           value="wooden_plaque"
         />
-        <label for="wooden_plaque">Wooden Plaque</label><br />
+        <label for="wooden_plaque" onclick="playText('wooden_plaque')"
+          >Wooden Plaque</label
+        ><br />
         <input
           type="radio"
           id="natural_carving"
           name="inscription_option"
           value="natural_carving"
         />
-        <label for="natural_carving">Natural Carving</label><br />
+        <label for="natural_carving" onclick="playText('natural_carving')"
+          >Natural Carving</label
+        ><br />
         <input
           type="radio"
           id="living_memorial"
           name="inscription_option"
           value="living_memorial"
         />
-        <label for="living_memorial">Living Memorial</label><br />
+        <label for="living_memorial" onclick="playText('living_memorial')"
+          >Living Memorial</label
+        ><br />
         <br />
       </div>
 
       <!-- Textarea for note to loved ones -->
       <div>
-        <label for="wishes">Please type in any wishes to loved ones:</label>
-        <br />
+        <label for="wishes" onclick="playText('wishes')"
+          >Please type in any wishes to loved ones:</label
+        ><br />
         <textarea id="wishes" name="wishes" rows="4" cols="30"></textarea
         ><br /><br />
       </div>
 
       <!-- Textarea for additional notes: Allows users to enter any other relevant information or special requests -->
       <div>
-        <label for="notes"
+        <label for="notes" onclick="playText('additional_notes')"
           >Please type in any additional notes you would like to be
           considered:</label
-        >
-        <br />
+        ><br />
         <textarea
           id="notes"
           name="additional_notes"
