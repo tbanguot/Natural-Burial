@@ -7,6 +7,8 @@ Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bha
 /* HTML ELEMENTS STYLES */
 body {
     font-family: Arial;
+    /* 768px / 11in = 70px/in */
+    font-size: 70px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,32 +19,20 @@ body {
     background-size: cover;
     }
     
-    .container {
-    width: 50%;
-    height: 100%;
-    background-color: whitesmoke;
-    display: flex;
-    padding: 0.25rem;
-    flex-direction: column;
-    }
-    
-    h1 {
+h1 {
     color: #333;
     text-align: center;
     width: 100%;
     }
     
-    div, .radio-group {
+div, .radio-group {
     width: 50%;
     align-items: center;
     display: flexbox;
     }
-    
-    .radio-group {
-    margin-left: 70px;
-    }
 
-    input[type="text"]{
+input[type="text"] {
+    font-size: 64px;
     width: 100%;
     padding: 12px;
     display: block;
@@ -50,18 +40,42 @@ body {
     border-radius: 4px;
     text-align: center;
     }
-    
-    input[type="radio"] {
+        
+input[type="radio"] {
     transform: scale(1.5);
     }
-    
-    button {
+        
+button {
     background-color: #5cb85c;
     color: white;
     padding: 10px;
     border: none;
     cursor: pointer;
     display: block;
-    font-size: 25px;
+    font-size: 64px;
     width: 70%;
     }
+
+textarea {
+    font-size: 64px;
+}
+    
+/***** User defined class styles *****/
+.radio-group {
+    margin-left: 70px;
+    }
+
+.container {
+    width: 50%;
+    height: 100%;
+    background-color: whitesmoke;
+    display: flex;
+    padding: 0.25rem;
+    flex-direction: column;
+    }
+
+.inputTextBox {
+    height: 50%;
+}
+/******* User defined id styles ******/
+/* none */
