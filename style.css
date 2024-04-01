@@ -7,6 +7,7 @@ Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bha
 /* HTML ELEMENTS STYLES */
 body {
     font-family: Arial;
+    font-size: 96px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,7 +19,7 @@ body {
     }
     
     .container {
-    width: 50%;
+    width: 80%;
     height: 100%;
     background-color: whitesmoke;
     display: flex;
@@ -26,35 +27,34 @@ body {
     flex-direction: column;
     }
     
-    h1 {
-    color: #333;
-    text-align: center;
-    width: 100%;
+    .text_info{
+        text-align: left;
+        align-items: left;
+        margin-left: 80;
     }
     
     div, .radio-group {
     width: 50%;
-    align-items: center;
     display: flexbox;
     }
     
     .radio-group {
     margin-left: 70px;
+    align-items: center;
     }
 
     input[type="text"]{
-    width: 100%;
     padding: 12px;
-    display: block;
+    display: inline-block;
     border: 1px solid black;
     border-radius: 4px;
     text-align: center;
     }
-    
+
     input[type="radio"] {
     transform: scale(1.5);
     }
-    
+
     button {
     background-color: #5cb85c;
     color: white;
@@ -65,4 +65,3 @@ body {
     font-size: 25px;
     width: 70%;
     }
-    

@@ -16,42 +16,56 @@ Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bha
   <body>
     <!-- The main container for the form, which structures the content and layout -->
     <div class="container">
+
+      <h1 class="heaer">Note: For any of the content on the page double click on it to hear an audio recording</h1>
+
       <!-- The heading of the form, which provides context to the user -->
-      <h1>Natural Burial Form</h1>
+      <h1 class="header">Natural Burial Form</h1>
+
       <div><audio id="audioPlayer"></audio></div>
+
+      <h3 class="header">Personal information</h3>
+
       <!-- Input field for the user's first name -->
       <div>
-        <label for="name" ondblclick="playText('name')">Enter your first name: </label><br />
+        <label for="name" class="text_info" ondblclick="playText('name')">Enter your first name: </label>
         <input type="text" id="name" name="first_name" required /><br />
+      </div>
+
+      <div>
+        <label for="name" class="text_info" ondblclick="playText('last_name')">Enter your last name: </label>
+        <input type="text" id="last_name" name="last_name" required /><br />
       </div>
 
       <!-- Input field for the user's date of birth -->
       <div>
-        <label for="dop" ondblclick="playText('dop')">Enter your date of birth:</label><br />
+        <label for="dop" class="text_info" ondblclick="playText('dop')">Enter your date of birth:</label>
         <input type="text" id="dop" name="date_of_birth" required /><br />
       </div>
 
       <!-- Input field for the user's phone number -->
       <div>
-        <label for="phone" ondblclick="playText('phone_number')">Enter your phone number: </label><br />
+        <label for="phone" class="text_info" ondblclick="playText('phone_number')">Enter your phone number: </label>
         <input type="text" id="phone" name="phone_number" required /><br />
       </div>
 
       <!-- Input field for the user's email address -->
       <div>
-        <label for="email" ondblclick="playText('email')">Enter your email address:</label><br />
+        <label for="email" class="text_info" ondblclick="playText('email')">Enter your email address:</label>
         <input type="text" id="email" name="email_address" required /><br />
       </div>
 
       <!-- Input field for the user's current mailing address -->
       <div>
-        <label for="address" ondblclick="playText('address')">Enter your current mailing address:</label><br />
+        <label for="address" class="text_info" ondblclick="playText('address')">Enter your current mailing address:</label>
         <input type="text" id="address" name="mailing_address" required /><br />
       </div>
 
+      <h4 class="header">Preferences</h4>
+
       <!-- Input field for the number of burial plots the user would like to book -->
       <div>
-        <label for="plots" ondblclick="playText('plots')">Enter the number of plots you would like to book:</label><br />
+        <label for="plots" class="text_info" ondblclick="playText('plots')">Enter the number of plots you would like to book:</label>
         <input type="text" id="plots" name="number_of_plots" required />
       </div>
       <br />
