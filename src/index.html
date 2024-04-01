@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../dist/output.css">
+    <title>natural burial</title>
+</head>
+<body class="dark:bg-black">
+    <nav class="w-4/5 m-auto p-5 flex justify-between items-center pb-10">
+        <h1 class="text-5xl font-bold text-gray-600 dark:text-white">Natural Burial Site</h1>
+        <button onclick={setTheme}
+            class="flex items-center text-xl font-bold space-x-2 size-max bg-gray-400 px-5 py-2 rounded-md dark:bg-gray-700 dark:text-white  toggleBtn">
+            <img src="../moon.png" alt="" class="w-4 h-4 flex dark:hidden">
+            <span class="flex dark:hidden">Dark</span>
+            <!--- dark mode-->
+            <img src="../sun.png" alt="" class="w-4 h-4 text-xl font-bold hidden dark:flex">
+            <span class="hidden dark:flex">Light</span>
+        </button>
+    </nav>
+    <main class="mx-auto max-w-screen-3xl bg-gray-100 p-10 dark:bg-inherit" id="form">
+         <!-- The heading of the form, which provides context to the user -->
+        <form class="max-w-5xl mx-auto mb-10 w-auto">
+            <p class="mb-6 text-5xl font-medium text-blue dark:text-gray-300">
+                Booking Form
+            </p>
+            <p class="mb-6 text-2xl font-medium text-red-600 dark:text-green-500">
+                Fields marked with * are required.
+            </p>
+            <!-- Input field for the user's first name -->
+            <div class="mb-5">
+                <label for="first_name" class="block mb-2 text-3xl  font-medium text-gray-900 dark:text-white">
+                    Enter your first name <span class="mb-6 text-xl font-medium text-red-600 dark:text-green-400">*</span>
+                </label>
+                <input type="text" id="first_name"
+                class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500
+                 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                required >
+            </div>
+            <!-- Input field for the user's last name -->
+            <div class="mb-5">
+            <label for="last_name" class="block mb-2 text-3xl font-medium text-gray-900 dark:text-white">
+                Enter your last name <span class="mb-6 text-xl font-medium text-red-600 dark:text-green-400">*</span>
+            </label>
+            <input type="text" id="last_name" 
+                class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500
+                dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            </div>
+            <!-- Input field for the user's date of birth -->
+            <div class="mb-5">
+                <label for="date_of_birth" class="block mb-2 text-3xl font-medium text-gray-900 dark:text-white">
+                    Enter your date of birth <span class="mb-6 text-xl font-medium text-red-600 dark:text-green-400">*</span>
+                </label>
+                <input type="date" id="date_of_birth"
+                    class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500
+                    dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            </div>
+            <!-- Input field for the user's phone number -->
+            <div class="mb-5">
+                <label for="phone_number" class="block mb-2 text-3xl font-medium text-gray-900 dark:text-white">
+                    Enter your phone number
+                </label>
+                <input type="tel" id="phone_number"
+                    class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500
+                    dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            </div>
+            <!-- Input field for the user's email address -->
+            <div class="mb-5">
+                <label for="email_address" class="block mb-2 text-3xl font-medium text-gray-900 dark:text-white">
+                    Enter your email address <span class="mb-6 text-xl font-medium text-red-600 dark:text-green-400">*</span>
+                </label>
+                <input type="email" id="email_address"
+                    class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500
+                    dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    </div>
+            <!-- Input field for the user's current mailing address -->
+            <div class="mb-5">
+                <label for="mailing_address" class="block mb-2 text-3xl font-medium text-gray-900 dark:text-white">
+                    Enter your current mailing address <span class="mb-6 text-xl font-medium text-red-600 dark:text-green-400">*</span>
+                </label>
+                <input type="text" id="mailing_address"
+                    class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500
+                    dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            </div>
+            <div class="mb-5">
+                <label for="number_of_plots" class="block mb-2 text-3xl font-medium text-gray-900 dark:text-white">
+                    Enter the number of plots <span class="mb-6 text-xl font-medium text-red-600 dark:text-green-400">*</span>
+                </label>
+                <input type="number" id="number_of_plots"
+                    class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500
+                    dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    required min="0">
+            </div>
+            <!-- Radio button selection for the marker option -->
+            <div class="mb-6">
+                <p class="block mb-2 text-3xl font-medium text-gray-700 dark:text-white">Select your markers option <span class="mb-6 text-xl font-medium text-red-600 dark:text-green-400">*</span></p>
+                <div class="flex items-center mb-2">
+                    <input id="markers_option_1" type="radio" name="markers_option" value="Tree Planting"
+                        class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600">
+                    <label for="markers_option_1" class="block ms-2  text-2xl text-medium font-medium text-gray-900 dark:text-gray-300">
+                        Tree Planting
+                    </label>
+                </div>
+                <div class="flex items-center mb-2">
+                    <input id="markers_option_2" type="radio" name="markers_option" value="Flat Stone Marker"
+                        class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600">
+                    <label for="markers_option_2" class="block ms-2 text-2xl font-medium text-gray-900 dark:text-gray-300">
+                        Flat Stone Marker
+                    </label>
+                </div>
+                <div class="flex items-center mb-2">
+                    <input id="markers_option_3" type="radio" name="markers_option" value="Wooden Marker"
+                        class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:bg-gray-700 dark:border-gray-600">
+                    <label for="markers_option_3" class="block ms-2 text-2xl font-medium text-gray-900 dark:text-gray-300">
+                        Wooden Marker
+                    </label>
+                </div>
+                <div class="flex items-center mb-4">
+                    <input id="markers_option_4" type="radio" name="markers_option" value="Wildflower Meadow"
+                        class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus-ring-blue-600 dark:bg-gray-700 dark:border-gray-600">
+                    <label for="markers_option_4" class="block ms-2 text-2xl font-medium text-gray-900 dark:text-gray-300">
+                        Wildflower Meadow
+                    </label>
+                </div>
+            </div>
+            <!-- Radio button selection for the burial method -->
+            <div class="mb-6">
+                <p class="block mb-2 text-3xl font-medium text-gray-700 dark:text-white">Select your burial method <span class="mb-6 text-xl font-medium text-red-600 dark:text-green-400">*</span></p>
+                <div class="flex items-center mb-2">
+                    <input id="burial_method_1" type="radio" name="burial_method" value="Shroud Burial"
+                        class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600
+                         dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600">
+                    <label for="burial_method_1" class="block ms-2  text-2xl font-medium text-gray-900 dark:text-gray-300">
+                        Shroud Burial
+                    </label>
+                </div>
+                <div class="flex items-center mb-2">
+                    <input id="burial_method_2" type="radio" name="burial_method" value="Biodegradable Coffin Burial"
+                        class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600
+                         dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600">
+                    <label for="burial_method_2" class="block ms-2 text-2xl font-medium text-gray-900 dark:text-gray-300">
+                        Biodegradable Coffin Burial
+                    </label>
+                </div>
+                <div class="flex items-center mb-2">
+                    <input id="burial_method_3" type="radio" name="burial_method" value="Tree or Seed Pod Burial"
+                        class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:bg-gray-700 dark:border-gray-600">
+                    <label for="burial_method_3" class="block ms-2 text-2xl font-medium text-gray-900 dark:text-gray-300">
+                        Tree or Seed Pod Burial
+                    </label>
+                </div>
+                <div class="flex items-center mb-4">
+                    <input id="burial_method_4" type="radio" name="burial_method" value="Conversation Burial"
+                        class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus-ring-blue-600 dark:bg-gray-700 dark:border-gray-600">
+                    <label for="burial_method_4" class="block ms-2 text-2xl font-medium text-gray-900 dark:text-gray-300">
+                        Conversation Burial
+                    </label>
+                </div>
+            </div>
+            <!-- Radio button selection for the grave location -->
+            <div class="mb-6">
+                <p class="block mb-2 text-3xl font-medium text-gray-700 dark:text-white">Select your grave location preference <span class="mb-6 text-xl font-medium text-red-600 dark:text-green-400">*</span></p>
+                <div class="flex items-center mb-2">
+                    <input id="grave_location_1" type="radio" name="grave_location" value="Near the shoreline"
+                        class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600
+                         dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600">
+                    <label for="grave_location_1" class="block ms-2 text-2xl font-medium text-gray-900 dark:text-gray-300">
+                        Near the shoreline
+                    </label>
+                </div>
+                <div class="flex items-center mb-2">
+                    <input id="grave_location_2" type="radio" name="grave_location" value="Looking out at St. Margaret's Bay"
+                        class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600
+                         dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600">
+                    <label for="grave_location_2" class="block ms-2 text-2xl font-medium text-gray-900 dark:text-gray-300">
+                        Looking out at St. Margaret's Bay
+                    </label>
+                </div>
+                <div class="flex items-center mb-2">
+                    <input id="grave_location_3" type="radio" name="grave_location" value="By the yellow birch forest"
+                        class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600
+                         dark:bg-gray-700 dark:border-gray-600">
+                    <label for="grave_location_3" class="block ms-2 text-2xl font-medium text-gray-900 dark:text-gray-300">
+                        By the yellow birch forest
+                    </label>
+                </div>
+            </div>
+            <!-- Radio button selection for the inscription option -->
+            <div class="mb-6">
+                <p class="block mb-2 text-3xl font-medium text-gray-700 dark:text-white">Select an inscription option <span class="mb-6 text-xl font-medium text-red-600 dark:text-green-400">*</span></p>
+                <div class="flex items-center mb-2">
+                    <input id="inscription_option_1" type="radio" name="inscription_option" value="Engraved Stone" class="w-4 h-4 border-gray-300 focus:ring-2
+                     focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600">
+                    <label for="inscription_option_1" class="block ms-2 text-2xl font-medium text-gray-900 dark:text-gray-300">
+                        Engraved Stone
+                    </label>
+                </div>
+                <div class="flex items-center mb-2">
+                    <input id="inscription_option_2" type="radio" name="inscription_option" value="Wooden Plaque"
+                        class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600
+                         dark:bg-gray-700 dark:border-gray-600">
+                    <label for="inscription_option_2" class="block ms-2 text-2xl  font-medium text-gray-900 dark:text-gray-300">
+                        Wooden Plaque
+                    </label>
+                </div>
+                <div class="flex items-center mb-2">
+                    <input id="inscription_option_3" type="radio" name="inscription_option" value="Natural Carving"
+                        class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:bg-gray-700 dark:border-gray-600">
+                    <label for="inscription_option_3" class="block ms-2 text-2xl  font-medium text-gray-900 dark:text-gray-300">
+                        Natural Carving
+                    </label>
+                </div>
+                <div class="flex items-center mb-4">
+                    <input id="inscription_option_4" type="radio" name="inscription_option" value="Living Memorial"
+                        class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus-ring-blue-600 dark:bg-gray-700 dark:border-gray-600">
+                    <label for="inscription_option_4" class="block ms-2 text-2xl  font-medium text-gray-900 dark:text-gray-300">
+                        Living Memorial
+                    </label>
+                </div>
+            </div>
+            <!-- Textarea for note to loved ones -->
+            <div class="mb-5">
+                <label for="message" class="block mb-2 text-3xl font-medium text-gray-700 dark:text-white">Please type in any wishes to loved ones</label>
+                <textarea id="message" rows="4" 
+                class="block p-3 w-full text-2xl text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500
+                 dark:bg-gray-700 dark:border-gray-400 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="Leave a note..."></textarea>
+            </div>
+            <!-- Textarea for additional notes: Allows users to enter any other relevant information or special requests -->
+            <div class="mb-5">
+                <label for="addition_note" class="block mb-2 text-3xl font-medium text-gray-900 dark:text-white">Please type in any additional notes you would like to be consider</label>
+                <textarea id="addition_note" rows="4" 
+                class="block p-3 w-full text-2xl text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500
+                 dark:bg-gray-700 dark:border-gray-400 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="Additional note..."></textarea>
+            </div>
+            <button type="submit" 
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg 
+                text-3xl px-5 py-2.5 text-center">
+                Submit Form
+            </button>
+        </form>
+    </main>
+</body>
+<script src="main.js">
+
+</script>
+</html>
