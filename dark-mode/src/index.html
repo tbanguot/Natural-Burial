@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../dist/output.css">
+    <title>DARK MODE</title>
+</head>
+<body class="dark:bg-black">
+    <nav class="w-4/5 m-auto p-5 flex justify-between items-center">
+        <h1 class="text-2xl font-bold dark:text-white">Dark mode</h1>
+        <button onclick={darkModeHandler()}
+        class="flex items-center space-x-2 bg-gray-200 px-5 py-2 rounded-md dark:bg-gray-700 dark:text-white ">
+            <img src="../moon.png" alt="" class="w-4 h-4 flex dark:hidden">
+            <span class="flex dark:hidden">Dark</span>
+            <!--- dark mode-->
+            <img src="../sun.png" alt="" class="w-4 h-4 hidden dark:flex">
+            <span class="hidden dark:flex">Light</span>
+        </button>
+    </nav>
+    <div class="w-full h-screen flex justify-center items-center">
+        <div
+         class="card w-[300px] h-[350px] p-4 bg-gray-800 text-white rounded-2xl drop-shadow-2xl
+         dark:bg-white dark:text-black drop-shadow-[0_35px_35px_rgba(255,255,255,0.25)]">
+            <div class="p-4 space-y-2">
+                <p class="font-bold text-sm">CARD</p>
+                <h1 class="text-xl font-bold">Lorem ipsum dolor sit amet consectetur.</h1>
+                <p class="text-xs text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const darkModeHandler = () => {
+        if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.remove("dark");
+        localStorage.theme = "light";
+      } else {
+        document.documentElement.classList.add("dark");
+        localStorage.theme = "dark";
+      }
+    };
+
+</script>
+</html>
