@@ -1,81 +1,11 @@
-/* FILE HEADER
-Purpose: This CSS file provides styling for the Natural Burial Service web form, 
-applying visual enhancements such as layout design, fonts, colors, and background images 
-for better user experience and readability.
-Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bhalla, Marko Ostrovista] */
+/*
+  The purpose of this file is to prioritize Tailwind utility classes.
 
-/* HTML ELEMENTS STYLES */
-body {
-    font-family: Arial;
-    /* 768px / 11in = 70px/in */
-    font-size: 70px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-image: url(Images/Flower.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    }
-    
-h1 {
-    color: #333;
-    text-align: center;
-    width: 100%;
-    }
-    
-div, .radio-group {
-    width: 50%;
-    align-items: center;
-    display: flexbox;
-    }
+  Author: Cole Turner
+*/
 
-input[type="text"] {
-    font-size: 64px;
-    width: 100%;
-    padding: 12px;
-    display: block;
-    border: 1px solid black;
-    border-radius: 4px;
-    text-align: center;
+@layer utilities {
+    .content-auto {
+      content-visibility: auto;
     }
-        
-input[type="radio"] {
-    transform: scale(1.5);
-    }
-        
-button {
-    background-color: #5cb85c;
-    color: white;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    display: block;
-    font-size: 64px;
-    width: 70%;
-    }
-
-textarea {
-    font-size: 64px;
 }
-    
-/***** User defined class styles *****/
-.radio-group {
-    margin-left: 70px;
-    }
-
-.container {
-    width: 50%;
-    height: 100%;
-    background-color: whitesmoke;
-    display: flex;
-    padding: 0.25rem;
-    flex-direction: column;
-    }
-
-.inputTextBox {
-    height: 50%;
-}
-/******* User defined id styles ******/
-/* none */

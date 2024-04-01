@@ -1,9 +1,8 @@
-<!DOCTYPE html>
 <!-- FILE HEADER
 Purpose: This HTML document provides the structure for a natural burial service form,
 allowing users to enter personal details and select options related to the burial process.
 Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bhalla, Marko Ostrovitsa]-->
-
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -11,40 +10,79 @@ Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bha
     <title>Natural Burial</title>
     <!-- Link to the external CSS file for styling the webpage -->
     <link rel="stylesheet" href="style.css" />
+    <!-- Adds Tailwind Play CDN script -->
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
+  <body class="font-[Arial] flex flex-col items-center bg-[url(Images/Flower.jpg)] bg-no-repeat 
+      bg-fixed bg-center bg-cover text-[70px] leading-tight">
     <!-- The main container for the form, which structures the content and layout -->
-    <div class="container">
+    <div class="w-1/2 h-full bg-[whitesmoke] flex p-1 flex-col">
       <!-- The heading of the form, which provides context to the user -->
-      <h1>Natural Burial Form</h1>
+      <h1 class="text-[#333] text-center w-full text-[90px]">Natural Burial Form</h1>
+      
       <!-- Input field for the user's first name -->
       <div>
         <label for="name">Enter your first name: </label><br />
-        <input type="text" id="name" name="first_name" required /><br />
+        <input 
+          type="text" 
+          id="name" 
+          name="first_name" 
+          class="text-[70px] w-full p-[12px] block border-[1px] 
+            border-[solid] border-[black] rounded-[4px] text-center" 
+          required 
+          /> <br />
       </div>
 
       <!-- Input field for the user's date of birth -->
       <div>
         <label for="DOB">Enter your date of birth:</label><br />
-        <input type="text" id="DOB" name="date_of_birth" required /><br />
+        <input 
+          type="text" 
+          id="DOB" 
+          name="date_of_birth" 
+          class="text-[70px] w-full p-[12px] block border-[1px] 
+            border-[solid] border-[black] rounded-[4px] text-center" 
+          required 
+        /> <br />
       </div>
 
       <!-- Input field for the user's phone number -->
       <div>
         <label for="phone">Enter your phone number: </label><br />
-        <input type="text" id="phone" name="phone_number" required /><br />
+        <input 
+          type="text" 
+          id="phone" 
+          name="phone_number" 
+          class="text-[70px] w-full p-[12px] block border-[1px] 
+            border-[solid] border-[black] rounded-[4px] text-center" 
+          required 
+        /> <br />
       </div>
 
       <!-- Input field for the user's email address -->
       <div>
         <label for="email">Enter your email address:</label><br />
-        <input type="text" id="email" name="email_address" required /><br />
+        <input 
+          type="text" 
+          id="email" 
+          name="email_address" 
+          class="text-[70px] w-full p-[12px] block border-[1px] 
+            border-[solid] border-[black] rounded-[4px] text-center" 
+          required 
+        /> <br />
       </div>
 
       <!-- Input field for the user's current mailing address -->
       <div>
         <label for="address">Enter your current mailing address:</label><br />
-        <input type="text" id="address" name="mailing_address" required /><br />
+        <input 
+          type="text" 
+          id="address" 
+          name="mailing_address" 
+          class="text-[70px] w-full p-[12px] block border-[1px] 
+            border-[solid] border-[black] rounded-[4px] text-center" 
+          required 
+        /> <br />
       </div>
 
       <!-- Input field for the number of burial plots the user would like to book -->
@@ -52,39 +90,48 @@ Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bha
         <label for="plots"
           >Enter the number of plots you would like to book:</label
         ><br />
-        <input type="text" id="plots" name="number_of_plots" required />
+        <input 
+          type="text" 
+          id="plots" 
+          name="number_of_plots" 
+          class="text-[70px] w-full p-[12px] block border-[1px] 
+            border-[solid] border-[black] rounded-[4px] text-center" 
+          required 
+        />
       </div>
       <br />
 
       <!-- Radio button selection for the marker option -->
-      <div class="radio-group">
+      <div class="w-1/2 ml-[70px] items-center">
         <label>Select your markers option:</label><br />
-        <input type="radio" id="tree" name="marker_option" value="tree" />
+        <input type="radio" id="tree" name="marker_option" value="tree" class="scale-150"/>
         <label for="tree">Tree Planting</label><br />
-        <input type="radio" id="stone" name="marker_option" value="stone" />
+        <input type="radio" id="stone" name="marker_option" value="stone" class="scale-150"/>
         <label for="stone">Flat Stone Marker</label><br />
-        <input type="radio" id="wooden" name="marker_option" value="wooden" />
+        <input type="radio" id="wooden" name="marker_option" value="wooden" class="scale-150"/>
         <label for="wooden">Wooden Marker</label><br />
         <input
           type="radio"
           id="wildflower"
           name="marker_option"
           value="wildflower"
+          class="scale-150"
         />
         <label for="wildflower">Wildflower Meadow</label><br />
         <br />
       </div>
 
       <!-- Radio button selection for the burial method -->
-      <div class="radio-group">
+      <div class="ml-[70px]">
         <label>Select a burial method:</label><br />
-        <input type="radio" id="shroud" name="burial_method" value="shroud" />
+        <input type="radio" id="shroud" name="burial_method" value="shroud" class="scale-150"/>
         <label for="shroud">Shroud Burial</label><br />
         <input
           type="radio"
           id="biodegradable_coffin"
           name="burial_method"
           value="biodegradable_coffin"
+          class="scale-150"
         />
         <label for="biodegradable_coffin">Biodegradable Coffin Burial</label
         ><br />
@@ -93,6 +140,7 @@ Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bha
           id="tree_burial"
           name="burial_method"
           value="tree_burial"
+          class="scale-150"
         />
         <label for="tree_burial">Tree or Seed Pod Burial</label><br />
         <input
@@ -100,35 +148,38 @@ Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bha
           id="conservation"
           name="burial_method"
           value="conservation"
+          class="scale-150"
         />
         <label for="conservation">Conservation Burial</label><br />
         <br />
       </div>
 
       <!-- Radio button selection for the grave location preference -->
-      <div class="radio-group">
+      <div class="ml-[70px]">
         <label>Select your grave location preference:</label><br />
-        <input type="radio" id="water" name="grave_location" value="water" />
+        <input type="radio" id="water" name="grave_location" value="water" class="scale-150" />
         <label for="water">Near the shoreline</label><br />
         <input
           type="radio"
           id="lookoff"
           name="grave_location"
           value="lookoff"
+          class="scale-150"
         />
         <label for="lookoff">Looking out at St. Margaret's Bay</label><br />
-        <input type="radio" id="birch" name="grave_location" value="birch" />
+        <input type="radio" id="birch" name="grave_location" value="birch" class="scale-150" />
         <label for="birch">By the yellow birch forest</label><br /><br />
       </div>
 
       <!-- Radio button selection for the inscription option on the grave marker -->
-      <div class="radio-group">
+      <div class="ml-[70px]">
         <label>Select an inscription option:</label><br />
         <input
           type="radio"
           id="engraved_stone"
           name="inscription_option"
           value="engraved_stone"
+          class="scale-150"
         />
         <label for="engraved_stone">Engraved Stone</label><br />
         <input
@@ -136,6 +187,7 @@ Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bha
           id="wooden_plaque"
           name="inscription_option"
           value="wooden_plaque"
+          class="scale-150"
         />
         <label for="wooden_plaque">Wooden Plaque</label><br />
         <input
@@ -143,6 +195,7 @@ Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bha
           id="natural_carving"
           name="inscription_option"
           value="natural_carving"
+          class="scale-150"
         />
         <label for="natural_carving">Natural Carving</label><br />
         <input
@@ -150,6 +203,7 @@ Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bha
           id="living_memorial"
           name="inscription_option"
           value="living_memorial"
+          class="scale-150"
         />
         <label for="living_memorial">Living Memorial</label><br />
         <br />
@@ -159,8 +213,13 @@ Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bha
       <div>
         <label for="wishes">Please type in any wishes to loved ones:</label>
         <br />
-        <textarea id="wishes" name="wishes" rows="4" cols="12"></textarea
-        ><br /><br />
+        <input 
+          type="text" 
+          id="wishes" 
+          name="wishes" 
+          class="text-[70px] w-full p-[12px] block border-[1px] 
+            border-[solid] border-[black] rounded-[4px] text-center" 
+        /> <br /> 
       </div>
 
       <!-- Textarea for additional notes: Allows users to enter any other relevant information or special requests -->
@@ -168,17 +227,25 @@ Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bha
         <label for="notes"
           >Please type in any additional notes you would like to be
           considered:</label
-        >
-        <br />
-        <textarea
-          id="notes"
-          name="additional_notes"
-          rows="4"
-          cols="12"
-        ></textarea>
+        > <br />
+        <input 
+          type="text" 
+          id="notes" 
+          name="additional_notes" 
+          class="text-[70px] w-full p-[12px] block border-[1px] border-[solid] 
+            border-[black] rounded-[4px] text-center" 
+        />
+      </div> 
+      <!-- Submit button wrapper -->
+      <div class="flex flex-col items-center justify-center pt-8 pb-4">
+        <button 
+          type="button" 
+          id="submitButton" 
+          class="bg-[#5cb85c] text-[white] p-[10px] border-[none] 
+            cursor-pointer block text-[70px] w-[70%] rounded-[8px]">
+          Submit Form
+        </button>
       </div>
-      <br />
-      <button type="button" id="submitButton">Submit Form</button>
     </div>
     <script src="submit.js"></script>
   </body>
