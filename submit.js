@@ -59,17 +59,34 @@ document.addEventListener("DOMContentLoaded", function () {
   // Populate form fields with stored data on page load
   const storedData = JSON.parse(localStorage.getItem("formData"));
   if (storedData) {
-      document.getElementById("name").value = storedData.firstName;
-      document.getElementById("DOB").value = storedData.dob;
-      document.getElementById("phone").value = storedData.phone;
-      document.getElementById("email").value = storedData.email;
-      document.getElementById("address").value = storedData.address;
-      document.getElementById("plots").value = storedData.plots;
-      document.getElementById(storedData.markerOption).checked = true;
-      document.getElementById(storedData.burialMethod).checked = true;
-      document.getElementById(storedData.graveLocation).checked = true;
-      document.getElementById(storedData.inscriptionOption).checked = true;
-      document.getElementById("wishes").value = storedData.wishes;
-      document.getElementById("notes").value = storedData.notes;
+      document.getElementById("name").value = storedData.firstName || "";
+      document.getElementById("DOB").value = storedData.dob || "";
+      document.getElementById("phone").value = storedData.phone || "";
+      document.getElementById("email").value = storedData.email || "";
+      document.getElementById("address").value = storedData.address || "";
+      document.getElementById("plots").value = storedData.plots || "";
+      
+      const markerOption = storedData.markerOption;
+      if (markerOption) {
+          document.getElementById(markerOption).checked = true;
+      }
+      
+      const burialMethod = storedData.burialMethod;
+      if (burialMethod) {
+          document.getElementById(burialMethod).checked = true;
+      }
+      
+      const graveLocation = storedData.graveLocation;
+      if (graveLocation) {
+          document.getElementById(graveLocation).checked = true;
+      }
+      
+      const inscriptionOption = storedData.inscriptionOption;
+      if (inscriptionOption) {
+          document.getElementById(inscriptionOption).checked = true;
+      }
+
+      document.getElementById("wishes").value = storedData.wishes || "";
+      document.getElementById("notes").value = storedData.notes || "";
   }
 });
