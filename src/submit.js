@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
             email: document.getElementById("email_address").value,
             address: document.getElementById("mailing_address").value,
             plots: document.getElementById("number_of_plots").value,
-            markerOption: getRadioValue("marker_option"),
+            markerOption: getRadioValue("markers_option"),
             burialMethod: getRadioValue("burial_method"),
             graveLocation: getRadioValue("grave_location"),
             inscriptionOption: getRadioValue("inscription_option"),
@@ -66,4 +66,4 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("message").value = storedData.wishes || "";
         document.getElementById("addition_note").value = storedData.notes || "";
     }
-  });
+});
