@@ -6,12 +6,12 @@ document.addEventListener("DOMContentLoaded", function () {
   submitButton.addEventListener("click", function () {
       // Get form values
       const formData = {
-          firstName: document.getElementById("name").value,
-          dob: document.getElementById("DOB").value,
-          phone: document.getElementById("phone").value,
-          email: document.getElementById("email").value,
-          address: document.getElementById("address").value,
-          plots: document.getElementById("plots").value,
+          firstName: document.getElementById("first_name").value,
+          dob: document.getElementById("date_of_birth").value,
+          phone: document.getElementById("phone_number").value,
+          email: document.getElementById("email_address").value,
+          address: document.getElementById("mailing_address").value,
+          plots: document.getElementById("number_of_plots").value,
           markerOption: getRadioValue("marker_option"),
           burialMethod: getRadioValue("burial_method"),
           graveLocation: getRadioValue("grave_location"),
@@ -33,38 +33,16 @@ document.addEventListener("DOMContentLoaded", function () {
       return radioButtons.length > 0 ? radioButtons[0].value : "";
   }
 
-  // Function to handle form clearing
-  clearButton.addEventListener("click", function () {
-      // Clear all input fields
-      document.getElementById("name").value = "";
-      document.getElementById("DOB").value = "";
-      document.getElementById("phone").value = "";
-      document.getElementById("email").value = "";
-      document.getElementById("address").value = "";
-      document.getElementById("plots").value = "";
-      document.querySelectorAll('input[name="marker_option"]').forEach(input => input.checked = false);
-      document.querySelectorAll('input[name="burial_method"]').forEach(input => input.checked = false);
-      document.querySelectorAll('input[name="grave_location"]').forEach(input => input.checked = false);
-      document.querySelectorAll('input[name="inscription_option"]').forEach(input => input.checked = false);
-      document.getElementById("wishes").value = "";
-      document.getElementById("notes").value = "";
-
-      // Remove stored form data from local storage
-      localStorage.removeItem("formData");
-
-      // Display a message to the user indicating that the form has been cleared.
-      alert("Form cleared successfully!");
-  });
 
   // Populate form fields with stored data on page load
   const storedData = JSON.parse(localStorage.getItem("formData"));
   if (storedData) {
-      document.getElementById("name").value = storedData.firstName || "";
-      document.getElementById("DOB").value = storedData.dob || "";
-      document.getElementById("phone").value = storedData.phone || "";
-      document.getElementById("email").value = storedData.email || "";
-      document.getElementById("address").value = storedData.address || "";
-      document.getElementById("plots").value = storedData.plots || "";
+      document.getElementById("first_name").value = storedData.firstName || "";
+      document.getElementById("date_of_birth").value = storedData.dob || "";
+      document.getElementById("phone_number").value = storedData.phone || "";
+      document.getElementById("email_address").value = storedData.email || "";
+      document.getElementById("mailing_address").value = storedData.address || "";
+      document.getElementById("number_of_plots").value = storedData.plots || "";
       
       const markerOption = storedData.markerOption;
       if (markerOption) {
