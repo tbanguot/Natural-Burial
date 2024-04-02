@@ -32,10 +32,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Function to retrieve the value of the checked radio button in a group
     function getRadioValue(groupName) {
-        const radioButtons = document.querySelectorAll(`input[name="${groupName}"]:checked`);
-        return radioButtons.length > 0 ? radioButtons[0].value : "";
+        const radioButtons = document.querySelectorAll(`input[name="${groupName}"]`);
+        for (const radioButton of radioButtons) {
+            if (radioButton.checked) {
+                return radioButton.value;
+            }
+        }
+        return ""; // Return empty string if no radio button is checked
     }
-
 
     // Populate form fields with stored data on page load
     const storedData = JSON.parse(localStorage.getItem("formData"));
