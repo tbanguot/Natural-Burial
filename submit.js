@@ -59,17 +59,17 @@ document.addEventListener("DOMContentLoaded", function () {
   // Populate form fields with stored data on page load
   const storedData = JSON.parse(localStorage.getItem("formData"));
   if (storedData) {
-      document.getElementById("name").value = storedData.firstName || "";
-      document.getElementById("DOB").value = storedData.dob || "";
-      document.getElementById("phone").value = storedData.phone || "";
-      document.getElementById("email").value = storedData.email || "";
-      document.getElementById("address").value = storedData.address || "";
-      document.getElementById("plots").value = storedData.plots || "";
+      document.getElementById("name").value = storedData.firstName;
+      document.getElementById("DOB").value = storedData.dob;
+      document.getElementById("phone").value = storedData.phone;
+      document.getElementById("email").value = storedData.email;
+      document.getElementById("address").value = storedData.address;
+      document.getElementById("plots").value = storedData.plots;
       document.getElementById(storedData.markerOption).checked = true;
       document.getElementById(storedData.burialMethod).checked = true;
       document.getElementById(storedData.graveLocation).checked = true;
       document.getElementById(storedData.inscriptionOption).checked = true;
-      document.getElementById("wishes").value = storedData.wishes || "";
-      document.getElementById("notes").value = storedData.notes || "";
+      document.getElementById("wishes").value = storedData.wishes;
+      document.getElementById("notes").value = storedData.notes;
   }
 });
