@@ -32,13 +32,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Function to retrieve the value of the checked radio button in a group
     function getRadioValue(groupName) {
-        const radioButtons = document.querySelectorAll(`input[name="${groupName}"]`);
-        for (const radioButton of radioButtons) {
-            if (radioButton.checked) {
-                return radioButton.value;
-            }
-        }
-        return ""; // Return empty string if no radio button is checked
+        const radioButton = document.querySelector(`input[name="${groupName}"]:checked`);
+        return radioButton ? radioButton.id : ""; // Return the ID of the checked radio button, or an empty string if none is checked
     }
 
     // Populate form fields with stored data on page load
@@ -53,25 +48,11 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("postal_code").value = storedData.postalCode || "";
         document.getElementById("number_of_plots").value = storedData.plots || "";
 
-        const markerOption = storedData.markerOption;
-        if (markerOption) {
-            document.getElementById(markerOption).checked = true;
-        }
-
-        const burialMethod = storedData.burialMethod;
-        if (burialMethod) {
-            document.getElementById(burialMethod).checked = true;
-        }
-
-        const graveLocation = storedData.graveLocation;
-        if (graveLocation) {
-            document.getElementById(graveLocation).checked = true;
-        }
-
-        const inscriptionOption = storedData.inscriptionOption;
-        if (inscriptionOption) {
-            document.getElementById(inscriptionOption).checked = true;
-        }
+        // Check the radio buttons based on stored IDs
+        document.getElementById(storedData.markerOption).checked = true;
+        document.getElementById(storedData.burialMethod).checked = true;
+        document.getElementById(storedData.graveLocation).checked = true;
+        document.getElementById(storedData.inscriptionOption).checked = true;
 
         document.getElementById("message").value = storedData.wishes || "";
         document.getElementById("addition_note").value = storedData.notes || "";
