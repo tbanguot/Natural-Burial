@@ -33,28 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
       return radioButtons.length > 0 ? radioButtons[0].value : "";
   }
 
-  // Function to handle form clearing
-  clearButton.addEventListener("click", function () {
-      // Clear all input fields
-      document.getElementById("name").value = "";
-      document.getElementById("DOB").value = "";
-      document.getElementById("phone").value = "";
-      document.getElementById("email").value = "";
-      document.getElementById("address").value = "";
-      document.getElementById("plots").value = "";
-      document.querySelectorAll('input[name="marker_option"]').forEach(input => input.checked = false);
-      document.querySelectorAll('input[name="burial_method"]').forEach(input => input.checked = false);
-      document.querySelectorAll('input[name="grave_location"]').forEach(input => input.checked = false);
-      document.querySelectorAll('input[name="inscription_option"]').forEach(input => input.checked = false);
-      document.getElementById("wishes").value = "";
-      document.getElementById("notes").value = "";
-
-      // Remove stored form data from local storage
-      localStorage.removeItem("formData");
-
-      // Display a message to the user indicating that the form has been cleared.
-      alert("Form cleared successfully!");
-  });
 
   // Populate form fields with stored data on page load
   const storedData = JSON.parse(localStorage.getItem("formData"));
