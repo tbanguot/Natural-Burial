@@ -35,18 +35,18 @@ function submitFormData() {
       var formData = JSON.parse(storedFormData);
   
       // Populate form fields
-      document.getElementById("name").value = formData.first_name;
-      document.getElementById("DOB").value = formData.date_of_birth;
-      document.getElementById("phone").value = formData.phone_number;
-      document.getElementById("email").value = formData.email_address;
-      document.getElementById("address").value = formData.mailing_address;
-      document.getElementById("plots").value = formData.number_of_plots;
-      document.querySelector('input[name="marker_option"][value="' + formData.marker_option + '"]').checked = true;
-      document.querySelector('input[name="burial_method"][value="' + formData.burial_method + '"]').checked = true;
-      document.querySelector('input[name="grave_location"][value="' + formData.grave_location + '"]').checked = true;
-      document.querySelector('input[name="inscription_option"][value="' + formData.inscription_option + '"]').checked = true;
-      document.getElementById("wishes").value = formData.wishes;
-      document.getElementById("notes").value = formData.additional_notes;
+      //document.getElementById("name").value = formData.first_name;
+      //document.getElementById("DOB").value = formData.date_of_birth;
+      //document.getElementById("phone").value = formData.phone_number;
+      //document.getElementById("email").value = formData.email_address;
+      //document.getElementById("address").value = formData.mailing_address;
+      //document.getElementById("plots").value = formData.number_of_plots;
+      //document.querySelector('input[name="marker_option"][value="' + formData.marker_option + '"]').checked = true;
+      //document.querySelector('input[name="burial_method"][value="' + formData.burial_method + '"]').checked = true;
+      //document.querySelector('input[name="grave_location"][value="' + formData.grave_location + '"]').checked = true;
+      //document.querySelector('input[name="inscription_option"][value="' + formData.inscription_option + '"]').checked = true;
+      //document.getElementById("wishes").value = formData.wishes;
+      //document.getElementById("notes").value = formData.additional_notes;
     }
   }
   
