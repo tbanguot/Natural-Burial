@@ -12,10 +12,10 @@ document.addEventListener("DOMContentLoaded", function () {
           email: document.getElementById("email").value,
           address: document.getElementById("address").value,
           plots: document.getElementById("plots").value,
-          markerOption: document.querySelector('input[name="marker_option"]:checked').value,
-          burialMethod: document.querySelector('input[name="burial_method"]:checked').value,
-          graveLocation: document.querySelector('input[name="grave_location"]:checked').value,
-          inscriptionOption: document.querySelector('input[name="inscription_option"]:checked').value,
+          markerOption: getRadioValue("marker_option"),
+          burialMethod: getRadioValue("burial_method"),
+          graveLocation: getRadioValue("grave_location"),
+          inscriptionOption: getRadioValue("inscription_option"),
           wishes: document.getElementById("wishes").value,
           notes: document.getElementById("notes").value
       };
@@ -26,6 +26,12 @@ document.addEventListener("DOMContentLoaded", function () {
       // Display a message to the user indicating that the form has been submitted.
       alert("Form submitted successfully!");
   });
+
+  // Function to retrieve the value of the checked radio button in a group
+  function getRadioValue(groupName) {
+      const radioButtons = document.querySelectorAll(`input[name="${groupName}"]:checked`);
+      return radioButtons.length > 0 ? radioButtons[0].value : "";
+  }
 
   // Function to handle form clearing
   clearButton.addEventListener("click", function () {
@@ -46,7 +52,8 @@ document.addEventListener("DOMContentLoaded", function () {
       // Remove stored form data from local storage
       localStorage.removeItem("formData");
 
-
+      // Display a message to the user indicating that the form has been cleared.
+      alert("Form cleared successfully!");
   });
 
   // Populate form fields with stored data on page load
