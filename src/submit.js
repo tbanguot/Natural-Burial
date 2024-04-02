@@ -16,8 +16,8 @@ document.addEventListener("DOMContentLoaded", function () {
           burialMethod: getRadioValue("burial_method"),
           graveLocation: getRadioValue("grave_location"),
           inscriptionOption: getRadioValue("inscription_option"),
-          wishes: document.getElementById("wishes").value,
-          notes: document.getElementById("notes").value
+          wishes: document.getElementById("message").value,
+          notes: document.getElementById("addition_note").value
       };
 
       // Save form data to local storage
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
           document.getElementById(inscriptionOption).checked = true;
       }
 
-      document.getElementById("wishes").value = storedData.wishes || "";
-      document.getElementById("notes").value = storedData.notes || "";
+      document.getElementById("message").value = storedData.wishes || "";
+      document.getElementById("addition_note").value = storedData.notes || "";
   }
 });
