@@ -1,3 +1,8 @@
+/** This file provides function for the submit button, storing information in a JSON object 
+ *  and retriving this info when the webpage (index.html) is loaded. 
+ *  
+ *  Author: Marko Ostrovitsa
+ */ 
 function submitFormData() {
     // Retrieve input values
     var formData = {
@@ -19,6 +24,7 @@ function submitFormData() {
   
     // Store in local storage
     localStorage.setItem("formData", formDataJSON);
+    console.log("Info Stored")
   }
   
   // Function to retrieve form data from local storage and populate the form
@@ -43,6 +49,7 @@ function submitFormData() {
       document.querySelector('input[name="inscription_option"][value="' + formData.inscription_option + '"]').checked = true;
       document.getElementById("wishes").value = formData.wishes;
       document.getElementById("notes").value = formData.additional_notes;
+      console.log("info retrived");
     }
   }
   

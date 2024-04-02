@@ -1,0 +1,9 @@
+/* The purpose of this file is to prioritize Tailwind utility classes.
+   Author: Cole Turner
+*/
+
+@layer utilities {
+    .content-auto {
+      content-visibility: auto;
+    }
+}
