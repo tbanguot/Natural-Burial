@@ -1,3 +1,6 @@
+// This javascript file takes the data from the natural burial form, saves them in the local storage and 
+// whenever the page is reloaded it automatically fills the information that were previously put.
+// Author: Marko Ostrovitsa
 function submitFormData() {
     // Retrieve input values
     var formData = {
