@@ -1287,6 +1287,14 @@ video {
   border: 8px solid red; 
 }
 
+.headerBgImage {
+  background-image: url("../Images/pine.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position-y: bottom;
+  background-clip: border-box;
+}
+
 
 @media (min-width: 768px) {
   .md\:dark\:bg-transparent:where(.dark, .dark *) {
