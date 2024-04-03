@@ -18,7 +18,7 @@ Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bha
 </head>
 <body class="dark:bg-black">
     <nav class="w-4/5 m-auto p-5 flex justify-between items-center pb-10">
-        <h1 class="text-5xl font-bold text-gray-600 dark:text-white">Natural Burial Site</h1>
+        <h1 ondblclick="playText('burial_site')" class="text-5xl font-bold text-gray-600 dark:text-white">Natural Burial Site</h1>
         <button onclick={setTheme}
             class="flex items-center text-xl font-bold space-x-2 size-12 bg-gray-400 px-5 py-2 rounded-md dark:bg-gray-700 dark:text-white toggleBtn">
             <img src="../Images/moon.png" alt="" class="w-4 h-4 flex dark:hidden">
@@ -31,20 +31,20 @@ Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bha
     <main class="mx-auto max-w-screen-3xl bg-gray-100 p-10 dark:bg-inherit" id="form">
          <!-- The heading of the form, which provides context to the user -->
         <form class="max-w-5xl mx-auto mb-10 w-auto">
-            <p class="mb-6 text-5xl font-medium text-blue dark:text-gray-300">
+            <p ondblclick="playText('booking_form')" class="mb-6 text-5xl font-medium text-blue dark:text-gray-300">
                 Booking Form 
             </p><br>
 
-            <p class="mb-6 text-2xl font-normal text-balck-600 dark:text-white">
-                Note: For any of the content on the page double click on the text to hear an
+            <p ondblclick="playText('note')" class="mb-6 text-2xl font-normal text-balck-600 dark:text-white">
+                Note: For any of the content on the page, double click on the text to hear an
                 audio recording.
               </p> <br><br>
 
-            <p class="mb-6 text-2xl font-normal text-red-600 dark:text-green-500">
+            <p ondblclick="playText('required')" class="mb-6 text-2xl font-normal text-red-600 dark:text-green-500">
                 Fields marked with * are required.
             </p> <br>
 
-            <p class="block mb-2 text-3xl  font-normal text-gray-900 dark:text-white">
+            <p ondblclick="playText('personal_info')" class="block mb-2 text-3xl  font-normal text-gray-900 dark:text-white">
                 Personal Information:
             </p>
 
@@ -105,7 +105,7 @@ Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bha
             </div>
 
             <div class="mb-5">
-                <label for="postal_code"  ondblclick="playText('postal_code')" class="block mb-2 text-3xl font-normal text-gray-900 dark:text-white">
+                <label for="postal_code"  ondblclick="playText('postal')" class="block mb-2 text-3xl font-normal text-gray-900 dark:text-white">
                     Enter your postal code
                 </label>
                 <input type="text" id="postal_code"
@@ -113,7 +113,7 @@ Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bha
                     dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
             </div><br><br><br>
 
-            <p class="block mb-2 text-3xl  font-normal text-gray-900 dark:text-white">
+            <p ondblclick="playText('personal_pref')" class="block mb-2 text-3xl  font-normal text-gray-900 dark:text-white">
                 Personal Preferences:
             </p>
 
@@ -160,7 +160,7 @@ Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bha
             </div>
             <!-- Radio button selection for the burial method -->
             <div class="mb-6">
-                <p ondblclick="playText('burial_method')" class="block mb-2 text-3xl font-normal text-gray-700 dark:text-white">Select your burial method <span class="mb-6 text-xl font-medium text-red-600 dark:text-green-400">*</span></p>
+                <p ondblclick="playText('burial_method')" class="block mb-2 text-3xl font-normal text-gray-700 dark:text-white">Select a burial method <span class="mb-6 text-xl font-medium text-red-600 dark:text-green-400">*</span></p>
                 <div class="flex items-center mb-2">
                     <input id="burial_method_1" type="radio" name="burial_method" value="Shroud Burial" required
                         class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600
