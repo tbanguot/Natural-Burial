@@ -1283,6 +1283,11 @@ video {
   --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity));
 }
 
+.highlight{
+  border: 2px solid red; 
+}
+
+
 @media (min-width: 768px) {
   .md\:dark\:bg-transparent:where(.dark, .dark *) {
     background-color: transparent;
