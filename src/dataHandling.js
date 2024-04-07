@@ -70,6 +70,19 @@ function downloadData() {
         console.error('Error downloading data:', error);
     });
 }
+// Function to show upload indicator
+function showUploadIndicator() {
+    const uploadIndicator = document.getElementById('uploadIndicator');
+    uploadIndicator.textContent = 'Data uploaded!';
+    uploadIndicator.style.color = 'green';
+}
+
+// Function to show download indicator
+function showDownloadIndicator() {
+    const downloadIndicator = document.getElementById('downloadIndicator');
+    downloadIndicator.textContent = 'Data downloaded!';
+    downloadIndicator.style.color = 'blue';
+}
 
 // Function to populate form fields with data
 function populateFormWithData(data) {
