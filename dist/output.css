@@ -1331,7 +1331,7 @@ video {
 }
 
 .ml-2 {
-  margin-left: 0.5rem;
+  margin-left: 1rem;
 }
 
 @media (min-width: 768px) {
