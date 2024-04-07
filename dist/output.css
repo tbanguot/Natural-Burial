@@ -872,6 +872,11 @@ video {
   padding-bottom: 0.5rem;
 }
 
+.py-3 {
+  padding-top: 1.3rem;
+  padding-bottom: 1.3rem;
+}
+
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -902,6 +907,10 @@ video {
 
 .pr-5 {
   padding-right: 1.25rem;
+}
+
+.pr-3 {
+  padding-right: 0.1rem;
 }
 
 .pt-6 {
@@ -1287,6 +1296,32 @@ video {
   border: 8px solid red; 
 }
 
+.bg-green-700 {
+  background-color: forestgreen;
+}
+
+.bg-green-800 {
+  background-color: darkgreen;
+}
+
+.hover\:bg-green-800:hover {
+  --tw-bg-opacity: 1;
+  background-color:darkgreen;
+}
+
+.bg-red-700 {
+  background-color: red;
+}
+
+.bg-red-800 {
+  background-color: darkred;
+}
+
+.hover\:bg-red-800:hover {
+  --tw-bg-opacity: 1;
+  background-color: darkred;
+}
+
 .headerBgImage {
   background-image: url("../Images/pine.jpg");
   background-repeat: no-repeat;
@@ -1295,6 +1330,9 @@ video {
   background-clip: border-box;
 }
 
+.ml-2 {
+  margin-left: 0.5rem;
+}
 
 @media (min-width: 768px) {
   .md\:dark\:bg-transparent:where(.dark, .dark *) {
