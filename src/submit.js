@@ -1,60 +1,93 @@
-/** This file provides function for the submit button, storing information in a JSON object 
- *  and retriving this info when the webpage (index.html) is loaded. 
- *  
- *  Author: Marko Ostrovitsa
- */ 
-function submitFormData() {
-    // Retrieve input values
-    var formData = {
-      first_name: document.getElementById("name").value,
-      date_of_birth: document.getElementById("DOB").value,
-      phone_number: document.getElementById("phone").value,
-      email_address: document.getElementById("email").value,
-      mailing_address: document.getElementById("address").value,
-      number_of_plots: document.getElementById("plots").value,
-      marker_option: document.querySelector('input[name="marker_option"]:checked').value,
-      burial_method: document.querySelector('input[name="burial_method"]:checked').value,
-      grave_location: document.querySelector('input[name="grave_location"]:checked').value,
-      inscription_option: document.querySelector('input[name="inscription_option"]:checked').value,
-      wishes: document.getElementById("wishes").value,
-      additional_notes: document.getElementById("notes").value
-    };
-    // Convert to JSON string
-    var formDataJSON = JSON.stringify(formData);
-  
-    // Store in local storage
-    localStorage.setItem("formData", formDataJSON);
-    console.log("Info Stored")
-  }
-  
-  // Function to retrieve form data from local storage and populate the form
-  function populateFormData() {
-    // Retrieve data from local storage
-    var storedFormData = localStorage.getItem("formData");
-  
-    if (storedFormData) {
-      // Parse JSON string
-      var formData = JSON.parse(storedFormData);
-  
-      // Populate form fields
-      document.getElementById("name").value = formData.first_name;
-      document.getElementById("DOB").value = formData.date_of_birth;
-      document.getElementById("phone").value = formData.phone_number;
-      document.getElementById("email").value = formData.email_address;
-      document.getElementById("address").value = formData.mailing_address;
-      document.getElementById("plots").value = formData.number_of_plots;
-      document.querySelector('input[name="marker_option"][value="' + formData.marker_option + '"]').checked = true;
-      document.querySelector('input[name="burial_method"][value="' + formData.burial_method + '"]').checked = true;
-      document.querySelector('input[name="grave_location"][value="' + formData.grave_location + '"]').checked = true;
-      document.querySelector('input[name="inscription_option"][value="' + formData.inscription_option + '"]').checked = true;
-      document.getElementById("wishes").value = formData.wishes;
-      document.getElementById("notes").value = formData.additional_notes;
-      console.log("info retrived");
-    }
-  }
-  
-  // Add event listener to the submit button
-  document.getElementById("submitButton").addEventListener("click", submitFormData);
+/** This file ...
+ * 
+ *  Authors: Sameh, Marko
+ */
 
-  // Populate form data when the webpage is loaded
-  window.addEventListener("load", populateFormData);
+document.addEventListener("DOMContentLoaded", function () {
+  const submitButton = document.querySelector("button[type='submit']");
+
+  // Function to handle form submission
+  submitButton.addEventListener("click", function (event) {
+      event.preventDefault(); // Prevent the default form submission behavior
+
+      // Check if all mandatory fields are filled
+      const mandatoryFields = ["first_name", "last_name", "date_of_birth", "email_address", "mailing_address", "number_of_plots"];
+      let missingFields = [];
+
+      mandatoryFields.forEach(fieldId => {
+          const fieldValue = document.getElementById(fieldId).value.trim();
+          if (!fieldValue) {
+              missingFields.push(fieldId);
+              document.getElementById(fieldId).classList.add("highlight");
+          } else {
+              document.getElementById(fieldId).classList.remove("highlight");
+          }
+      });
+
+      // If any mandatory fields are missing, scroll to the first missing field and display an alert message
+      if (missingFields.length > 0) {
+          const firstMissingField = document.getElementById(missingFields[0]);
+          firstMissingField.scrollIntoView({ behavior: "smooth", block: "center" });
+          playText('ping');
+          return; // Exit the function to prevent form submission
+      }
+
+      // Get form values if all mandatory fields are filled
+      const formData = {
+          firstName: document.getElementById("first_name").value,
+          lastName: document.getElementById("last_name").value,
+          dob: document.getElementById("date_of_birth").value,
+          phone: document.getElementById("phone_number").value,
+          email: document.getElementById("email_address").value,
+          address: document.getElementById("mailing_address").value,
+          postalCode: document.getElementById("postal_code").value,
+          plots: document.getElementById("number_of_plots").value,
+          markerOption: getRadioValue("markers_option"),
+          burialMethod: getRadioValue("burial_method"),
+          graveLocation: getRadioValue("grave_location"),
+          inscriptionOption: getRadioValue("inscription_option"),
+          wishes: document.getElementById("message").value,
+          notes: document.getElementById("addition_note").value
+      };
+
+      // Save form data to local storage
+      localStorage.setItem("formData", JSON.stringify(formData));
+
+      playText('button_pressed');
+  });
+
+  // Function to retrieve the value of the checked radio button in a group
+  function getRadioValue(groupName) {
+      const radioButton = document.querySelector(`input[name="${groupName}"]:checked`);
+      return radioButton ? radioButton.id : ""; // Return the ID of the checked radio button, or an empty string if none is checked
+  }
+
+  // Populate form fields with stored data on page load
+  const storedData = JSON.parse(localStorage.getItem("formData"));
+  if (storedData) {
+      document.getElementById("first_name").value = storedData.firstName || "";
+      document.getElementById("last_name").value = storedData.lastName || "";
+      document.getElementById("date_of_birth").value = storedData.dob || "";
+      document.getElementById("phone_number").value = storedData.phone || "";
+      document.getElementById("email_address").value = storedData.email || "";
+      document.getElementById("mailing_address").value = storedData.address || "";
+      document.getElementById("postal_code").value = storedData.postalCode || "";
+      document.getElementById("number_of_plots").value = storedData.plots || "";
+
+      // Check the radio buttons based on stored IDs
+      document.getElementById(storedData.markerOption).checked = true;
+      document.getElementById(storedData.burialMethod).checked = true;
+      document.getElementById(storedData.graveLocation).checked = true;
+      document.getElementById(storedData.inscriptionOption).checked = true;
+
+      document.getElementById("message").value = storedData.wishes || "";
+      document.getElementById("addition_note").value = storedData.notes || "";
+  }
+});
+
+// Highlight mandatory fields that are not filled
+document.querySelectorAll("input[required], textarea[required]").forEach(input => {
+  input.addEventListener("input", function () {
+      this.classList.remove("highlight");
+  });
+});

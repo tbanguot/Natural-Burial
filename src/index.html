@@ -14,11 +14,11 @@ Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bha
     <link rel="stylesheet" href="../dist/output.css">
     <!-- Prioritize Tailwind's utility classes -->
     <link rel="stylesheet" href="../dist/tailwindPriority.css"/>
-    <title>natural burial</title>
+    <title>Natural Burial</title>
 </head>
 <body class="dark:bg-black">
-    <nav class="w-4/5 m-auto p-5 flex justify-between items-center pb-10">
-        <h1 class="text-5xl font-bold text-gray-600 dark:text-white">Natural Burial Site</h1>
+    <nav class="w-full m-auto p-5 flex justify-between items-center pb-10 headerBgImage ">
+        <h1 ondblclick="playText('burial_site')" class="text-5xl font-bold text-white dark:text-gray-900">Natural Burial Site</h1>
         <button onclick={setTheme}
             class="flex items-center text-xl font-bold space-x-2 size-12 bg-gray-400 px-5 py-2 rounded-md dark:bg-gray-700 dark:text-white toggleBtn">
             <img src="../Images/moon.png" alt="" class="w-4 h-4 flex dark:hidden">
@@ -31,15 +31,26 @@ Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bha
     <main class="mx-auto max-w-screen-3xl bg-gray-100 p-10 dark:bg-inherit" id="form">
          <!-- The heading of the form, which provides context to the user -->
         <form class="max-w-5xl mx-auto mb-10 w-auto">
-            <p class="mb-6 text-5xl font-medium text-blue dark:text-gray-300">
-                Booking Form
-            </p>
-            <p class="mb-6 text-2xl font-normal text-red-600 dark:text-green-500">
+            <p ondblclick="playText('booking_form')" class="mb-6 text-5xl font-medium text-blue dark:text-gray-300">
+                Booking Form 
+            </p><br>
+
+            <p ondblclick="playText('note')" class="mb-6 text-2xl font-normal text-balck-600 dark:text-white">
+                Note: For any of the content on the page, double click on the text to hear an
+                audio recording.
+              </p> <br><br>
+
+            <p ondblclick="playText('required')" class="mb-6 text-2xl font-normal text-red-600 dark:text-green-500">
                 Fields marked with * are required.
+            </p> <br>
+
+            <p ondblclick="playText('personal_info')" class="block mb-2 text-3xl  font-normal text-gray-900 dark:text-white">
+                Personal Information:
             </p>
+
             <!-- Input field for the user's first name -->
             <div class="mb-5">
-                <label for="first_name" class="block mb-2 text-3xl  font-normal text-gray-900 dark:text-white">
+                <label for="first_name" ondblclick="playText('name')" class="block mb-2 text-3xl  font-normal text-gray-900 dark:text-white">
                     Enter your first name <span class="mb-6 text-xl font-medium text-red-600 dark:text-green-400">*</span>
                 </label>
                 <input type="text" id="first_name"
@@ -49,7 +60,7 @@ Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bha
             </div>
             <!-- Input field for the user's last name -->
             <div class="mb-5">
-            <label for="last_name" class="block mb-2 text-3xl font-normal text-gray-900 dark:text-white">
+            <label for="last_name" ondblclick="playText('last_name')" class="block mb-2 text-3xl font-normal text-gray-900 dark:text-white">
                 Enter your last name <span class="mb-6 text-xl font-medium text-red-600 dark:text-green-400">*</span>
             </label>
             <input type="text" id="last_name" required
@@ -58,8 +69,8 @@ Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bha
             </div>
             <!-- Input field for the user's date of birth -->
             <div class="mb-5">
-                <label for="date_of_birth" class="block mb-2 text-3xl font-normal text-gray-900 dark:text-white">
-                    Enter your birth date <span class="mb-6 text-lg font-medium text-red-600 dark:text-green-400">*</span>
+                <label for="date_of_birth" ondblclick="playText('dop')" class="block mb-2 text-3xl font-normal text-gray-900 dark:text-white">
+                    Enter your date of birth <span class="mb-6 text-lg font-medium text-red-600 dark:text-green-400">*</span>
                 </label>
                 <input type="text" id="date_of_birth" placeholder="yyyy-mm-dd" required
                     class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500
@@ -67,7 +78,7 @@ Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bha
             </div>
             <!-- Input field for the user's phone number -->
             <div class="mb-5">
-                <label for="phone_number" class="block mb-2 text-3xl font-normal text-gray-900 dark:text-white">
+                <label for="phone_number"  ondblclick="playText('phone_number')" class="block mb-2 text-3xl font-normal text-gray-900 dark:text-white">
                     Enter your phone number
                 </label>
                 <input type="tel" id="phone_number"
@@ -76,7 +87,7 @@ Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bha
             </div>
             <!-- Input field for the user's email address -->
             <div class="mb-5">
-                <label for="email_address" class="block mb-2 text-3xl font-normal text-gray-900 dark:text-white">
+                <label for="email_address" ondblclick="playText('email')" class="block mb-2 text-3xl font-normal text-gray-900 dark:text-white">
                     Enter your email address <span class="mb-6 text-xl font-medium text-red-600 dark:text-green-400">*</span>
                 </label>
                 <input type="email" id="email_address" required
@@ -85,15 +96,29 @@ Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bha
                     </div>
             <!-- Input field for the user's current mailing address -->
             <div class="mb-5">
-                <label for="mailing_address" class="block mb-2 text-3xl font-normal text-gray-900 dark:text-white">
+                <label for="mailing_address" ondblclick="playText('address')" class="block mb-2 text-3xl font-normal text-gray-900 dark:text-white">
                     Enter your current mailing address <span class="mb-6 text-xl font-medium text-red-600 dark:text-green-400">*</span>
                 </label>
                 <input type="text" id="mailing_address" placeholder="123 this Rd. Town, Province." required
                     class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500
                     dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
             </div>
+
             <div class="mb-5">
-                <label for="number_of_plots" class="block mb-2 text-3xl font-normal text-gray-900 dark:text-white">
+                <label for="postal_code"  ondblclick="playText('postal')" class="block mb-2 text-3xl font-normal text-gray-900 dark:text-white">
+                    Enter your postal code
+                </label>
+                <input type="text" id="postal_code"
+                    class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500
+                    dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            </div><br><br><br>
+
+            <p ondblclick="playText('personal_pref')" class="block mb-2 text-3xl  font-normal text-gray-900 dark:text-white">
+                Personal Preferences:
+            </p>
+
+            <div class="mb-5">
+                <label for="number_of_plots"  ondblclick="playText('plots')" class="block mb-2 text-3xl font-normal text-gray-900 dark:text-white">
                     Enter the number of plots <span class="mb-6 text-xl font-medium text-red-600 dark:text-green-400">*</span>
                 </label>
                 <input type="number" id="number_of_plots"
@@ -103,44 +128,44 @@ Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bha
             </div>
             <!-- Radio button selection for the marker option -->
             <div class="mb-6">
-                <p class="block mb-2 text-3xl font-normal text-gray-700 dark:text-white">Select your markers option <span class="mb-6 text-xl font-medium text-red-600 dark:text-green-400">*</span></p>
+                <p ondblclick="playText('markers_option')" class="block mb-2 text-3xl font-normal text-gray-900 dark:text-white">Select your markers option <span class="mb-6 text-xl font-medium text-red-600 dark:text-green-400">*</span></p>
                 <div class="flex items-center mb-2">
                     <input id="markers_option_1" type="radio" name="markers_option" value="Tree Planting" required
                         class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600">
-                    <label for="markers_option_1" class="block ms-2  text-2xl text-medium font-normal text-gray-900 dark:text-gray-300">
+                    <label for="markers_option_1" ondblclick="playText('tree_planting')" class="block ms-2  text-2xl text-medium font-normal text-gray-700 dark:text-gray-300">
                         Tree Planting
                     </label>
                 </div>
                 <div class="flex items-center mb-2">
                     <input id="markers_option_2" type="radio" name="markers_option" value="Flat Stone Marker"
                         class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600">
-                    <label for="markers_option_2" class="block ms-2 text-2xl font-normal text-gray-900 dark:text-gray-300">
+                    <label for="markers_option_2" ondblclick="playText('flat_stone')" class="block ms-2 text-2xl font-normal text-gray-700 dark:text-gray-300">
                         Flat Stone Marker
                     </label>
                 </div>
                 <div class="flex items-center mb-2">
                     <input id="markers_option_3" type="radio" name="markers_option" value="Wooden Marker"
                         class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:bg-gray-700 dark:border-gray-600">
-                    <label for="markers_option_3" class="block ms-2 text-2xl font-normal text-gray-900 dark:text-gray-300">
+                    <label for="markers_option_3" ondblclick="playText('wooden')" class="block ms-2 text-2xl font-normal text-gray-700 dark:text-gray-300">
                         Wooden Marker
                     </label>
                 </div>
                 <div class="flex items-center mb-4">
                     <input id="markers_option_4" type="radio" name="markers_option" value="Wildflower Meadow"
                         class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus-ring-blue-600 dark:bg-gray-700 dark:border-gray-600">
-                    <label for="markers_option_4" class="block ms-2 text-2xl font-normal text-gray-900 dark:text-gray-300">
+                    <label for="markers_option_4" ondblclick="playText('wildflower')" class="block ms-2 text-2xl font-normal text-gray-700 dark:text-gray-300">
                         Wildflower Meadow
                     </label>
                 </div>
             </div>
             <!-- Radio button selection for the burial method -->
             <div class="mb-6">
-                <p class="block mb-2 text-3xl font-normal text-gray-700 dark:text-white">Select your burial method <span class="mb-6 text-xl font-medium text-red-600 dark:text-green-400">*</span></p>
+                <p ondblclick="playText('burial_method')" class="block mb-2 text-3xl font-normal text-gray-900 dark:text-white">Select a burial method <span class="mb-6 text-xl font-medium text-red-600 dark:text-green-400">*</span></p>
                 <div class="flex items-center mb-2">
                     <input id="burial_method_1" type="radio" name="burial_method" value="Shroud Burial" required
                         class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600
                          dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600">
-                    <label for="burial_method_1" class="block ms-2  text-2xl font-normal text-gray-900 dark:text-gray-300">
+                    <label for="burial_method_1" ondblclick="playText('shroud')" class="block ms-2  text-2xl font-normal text-gray-700 dark:text-gray-300">
                         Shroud Burial
                     </label>
                 </div>
@@ -148,33 +173,33 @@ Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bha
                     <input id="burial_method_2" type="radio" name="burial_method" value="Biodegradable Coffin Burial"
                         class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600
                          dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600">
-                    <label for="burial_method_2" class="block ms-2 text-2xl font-normal text-gray-900 dark:text-gray-300">
+                    <label for="burial_method_2" ondblclick="playText('biodegradable')" class="block ms-2 text-2xl font-normal text-gray-700 dark:text-gray-300">
                         Biodegradable Coffin Burial
                     </label>
                 </div>
                 <div class="flex items-center mb-2">
                     <input id="burial_method_3" type="radio" name="burial_method" value="Tree or Seed Pod Burial"
                         class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:bg-gray-700 dark:border-gray-600">
-                    <label for="burial_method_3" class="block ms-2 text-2xl font-normal text-gray-900 dark:text-gray-300">
+                    <label for="burial_method_3" ondblclick="playText('tree_burial')" class="block ms-2 text-2xl font-normal text-gray-700 dark:text-gray-300">
                         Tree or Seed Pod Burial
                     </label>
                 </div>
                 <div class="flex items-center mb-4">
                     <input id="burial_method_4" type="radio" name="burial_method" value="Conversation Burial"
                         class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus-ring-blue-600 dark:bg-gray-700 dark:border-gray-600">
-                    <label for="burial_method_4" class="block ms-2 text-2xl font-normal text-gray-900 dark:text-gray-300">
+                    <label for="burial_method_4" ondblclick="playText('conservation')" class="block ms-2 text-2xl font-normal text-gray-700 dark:text-gray-300">
                         Conversation Burial
                     </label>
                 </div>
             </div>
             <!-- Radio button selection for the grave location -->
             <div class="mb-6">
-                <p class="block mb-2 text-3xl font-normal text-gray-700 dark:text-white">Select your grave location preference <span class="mb-6 text-xl font-medium text-red-600 dark:text-green-400">*</span></p>
+                <p ondblclick="playText('location_pref')" class="block mb-2 text-3xl font-normal text-gray-900 dark:text-white">Select your grave location preference <span class="mb-6 text-xl font-medium text-red-600 dark:text-green-400">*</span></p>
                 <div class="flex items-center mb-2">
                     <input id="grave_location_1" type="radio" name="grave_location" value="Near the shoreline" required
                         class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600
                          dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600">
-                    <label for="grave_location_1" class="block ms-2 text-2xl font-normal text-gray-900 dark:text-gray-300">
+                    <label for="grave_location" ondblclick="playText('shoreline')" class="block ms-2 text-2xl font-normal text-gray-700 dark:text-gray-300">
                         Near the shoreline
                     </label>
                 </div>
@@ -182,7 +207,7 @@ Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bha
                     <input id="grave_location_2" type="radio" name="grave_location" value="Looking out at St. Margaret's Bay"
                         class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600
                          dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600">
-                    <label for="grave_location_2" class="block ms-2 text-2xl font-normal text-gray-900 dark:text-gray-300">
+                    <label for="grave_location" ondblclick="playText('bay')" class="block ms-2 text-2xl font-normal text-gray-700 dark:text-gray-300">
                         Looking out at St. Margaret's Bay
                     </label>
                 </div>
@@ -190,18 +215,18 @@ Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bha
                     <input id="grave_location_3" type="radio" name="grave_location" value="By the yellow birch forest"
                         class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600
                          dark:bg-gray-700 dark:border-gray-600">
-                    <label for="grave_location_3" class="block ms-2 text-2xl font-normal text-gray-900 dark:text-gray-300">
+                    <label for="grave_location" ondblclick="playText('yellow_forest')" class="block ms-2 text-2xl font-normal text-gray-700 dark:text-gray-300">
                         By the yellow birch forest
                     </label>
                 </div>
             </div>
             <!-- Radio button selection for the inscription option -->
             <div class="mb-6">
-                <p class="block mb-2 text-3xl font-normal text-gray-700 dark:text-white">Select an inscription option <span class="mb-6 text-xl font-medium text-red-600 dark:text-green-400">*</span></p>
+                <p ondblclick="playText('inscription_option')" class="block mb-2 text-3xl font-normal text-gray-900 dark:text-white">Select an inscription option <span class="mb-6 text-xl font-medium text-red-600 dark:text-green-400">*</span></p>
                 <div class="flex items-center mb-2">
                     <input id="inscription_option_1" type="radio" name="inscription_option" value="Engraved Stone" required class="w-4 h-4 border-gray-300 focus:ring-2 
                      focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600">
-                    <label for="inscription_option_1" class="block ms-2 text-2xl font-normal text-gray-900 dark:text-gray-300">
+                    <label for="inscription_option" ondblclick="playText('engraved_stone')" class="block ms-2 text-2xl font-normal text-gray-700 dark:text-gray-300">
                         Engraved Stone
                     </label>
                 </div>
@@ -209,28 +234,28 @@ Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bha
                     <input id="inscription_option_2" type="radio" name="inscription_option" value="Wooden Plaque"
                         class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600
                          dark:bg-gray-700 dark:border-gray-600">
-                    <label for="inscription_option_2" class="block ms-2 text-2xl font-normal text-gray-900 dark:text-gray-300">
+                    <label for="inscription_option" ondblclick="playText('wooden_plaque')" class="block ms-2 text-2xl font-normal text-gray-700 dark:text-gray-300">
                         Wooden Plaque
                     </label>
                 </div>
                 <div class="flex items-center mb-2">
                     <input id="inscription_option_3" type="radio" name="inscription_option" value="Natural Carving"
                         class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:bg-gray-700 dark:border-gray-600">
-                    <label for="inscription_option_3" class="block ms-2 text-2xl  font-normal text-gray-900 dark:text-gray-300">
+                    <label for="inscription_option" ondblclick="playText('natural_carving')" class="block ms-2 text-2xl  font-normal text-gray-700 dark:text-gray-300">
                         Natural Carving
                     </label>
                 </div>
                 <div class="flex items-center mb-4">
                     <input id="inscription_option_4" type="radio" name="inscription_option" value="Living Memorial"
                         class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus-ring-blue-600 dark:bg-gray-700 dark:border-gray-600">
-                    <label for="inscription_option_4" class="block ms-2 text-2xl  font-normal text-gray-900 dark:text-gray-300">
+                    <label for="inscription_option" ondblclick="playText('living_memorial')" class="block ms-2 text-2xl  font-normal text-gray-700 dark:text-gray-300">
                         Living Memorial
                     </label>
                 </div>
             </div>
             <!-- Textarea for note to loved ones -->
             <div class="mb-5">
-                <label for="message" class="block mb-2 text-3xl font-normal text-gray-700 dark:text-white">Please type in any wishes to loved ones</label>
+                <label for="message" ondblclick="playText('wishes')" class="block mb-2 text-3xl font-normal text-gray-900 dark:text-white">Please type in any wishes to loved ones</label>
                 <textarea id="message" rows="4" 
                 class="block p-3 w-full text-2xl text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500
                  dark:bg-gray-700 dark:border-gray-400 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -238,7 +263,7 @@ Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bha
             </div>
             <!-- Textarea for additional notes: Allows users to enter any other relevant information or special requests -->
             <div class="mb-5">
-                <label for="addition_note" class="block mb-2 text-3xl font-normal text-gray-900 dark:text-white">Please type in any additional notes you would like to be consider</label>
+                <label for="addition_note"  ondblclick="playText('additional_notes')" class="block mb-2 text-3xl font-normal text-gray-900 dark:text-white">Please type in any additional notes you would like to be consider</label>
                 <textarea id="addition_note" rows="4" 
                 class="block p-3 w-full text-2xl text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500
                  dark:bg-gray-700 dark:border-gray-400 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -252,8 +277,17 @@ Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bha
         </form>
     </main>
 </body>
+
 <!-- Submit button javaScript-->
 <script src="submit.js"></script>
+
 <!-- Dark/lightmode javaScript-->
 <script src="main.js"></script>
+
+<!--Audio player javascript-->
+<script src="TTS.js"></script>
+
+<!--Placeholder for audio player-->
+<div><audio id="audioPlayer"></audio></div>
+
 </html>
