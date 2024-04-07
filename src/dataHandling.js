@@ -1,106 +1,148 @@
-// Global variable to hold data
-let globalData = {
-    firstName: "John",
-    lastName: "Doe",
-    dob: "", 
-    phone: "",
-    email: "",
-    address: "",
-    postalCode: "",
-    plots: 0, // Default number of plots
-    markerOption: "markers_option_1", // Default marker option
-    burialMethod: "burial_method_1", // Default burial method
-    graveLocation: "grave_location_1", // Default grave location
-    inscriptionOption: "inscription_option_1", // Default inscription option
-    wishes: "",
-    notes: ""
-    // Add other default values here
-};
-
-// Function to handle form submission
 document.addEventListener("DOMContentLoaded", function () {
+    const uploadButton = document.getElementById("uploadButton");
+    const downloadButton = document.getElementById("downloadButton");
+    const uploadIndicator = document.getElementById("uploadIndicator");
+    const downloadIndicator = document.getElementById("downloadIndicator");
 
-    // Existing code for form submission and local storage handling
+    // Global variable to hold data
+    let globalData = {};
 
-    // Upload Button Event Listener
-    document.getElementById("uploadButton").addEventListener("click", function () {
-        uploadData(globalData);
+    // Function to handle form submission
+    function handleFormSubmission(event) {
+        event.preventDefault(); // Prevent the default form submission behavior
+
+        // Get form values
+        const formData = {
+            firstName: document.getElementById("first_name").value,
+            lastName: document.getElementById("last_name").value,
+            dob: document.getElementById("date_of_birth").value,
+            phone: document.getElementById("phone_number").value,
+            email: document.getElementById("email_address").value,
+            address: document.getElementById("mailing_address").value,
+            postalCode: document.getElementById("postal_code").value,
+            plots: document.getElementById("number_of_plots").value,
+            markerOption: getRadioValue("markers_option"),
+            burialMethod: getRadioValue("burial_method"),
+            graveLocation: getRadioValue("grave_location"),
+            inscriptionOption: getRadioValue("inscription_option"),
+            wishes: document.getElementById("message").value,
+            notes: document.getElementById("addition_note").value
+        };
+
+        // Save form data to local storage and update globalData
+        localStorage.setItem("formData", JSON.stringify(formData));
+        globalData = formData;
+
+        // Display a message to the user indicating that the form has been submitted.
+        alert("Form submitted successfully!");
+    }
+
+    // Function to retrieve the value of the checked radio button in a group
+    function getRadioValue(groupName) {
+        const radioButton = document.querySelector(`input[name="${groupName}"]:checked`);
+        return radioButton ? radioButton.id : ""; // Return the ID of the checked radio button, or an empty string if none is checked
+    }
+
+    // Function to handle data upload
+    function uploadData() {
+        // Simulate data upload to the server (replace with actual server interaction)
+        setTimeout(() => {
+            // Show upload indicator
+            uploadIndicator.innerText = "Data uploaded successfully";
+            setTimeout(() => {
+                uploadIndicator.innerText = "";
+            }, 3000);
+        }, 1000);
+    }
+
+    // Function to handle data download
+    function downloadData() {
+        // Simulate data download from the server (replace with actual server interaction)
+        setTimeout(() => {
+            // Populate webpage with downloaded data and update globalData
+            const storedData = JSON.parse(localStorage.getItem("formData"));
+            if (storedData) {
+                globalData = storedData;
+                populateFormFields(globalData);
+
+                // Show download indicator
+                downloadIndicator.innerText = "Data downloaded successfully";
+                setTimeout(() => {
+                    downloadIndicator.innerText = "";
+                }, 3000);
+            } else {
+                // If no data is available on the server, use default values and update globalData
+                const defaultData = getDefaultData(); // Function to get default data
+                globalData = defaultData;
+                populateFormFields(globalData);
+
+                // Show download indicator
+                downloadIndicator.innerText = "No data available on the server. Using default values.";
+                setTimeout(() => {
+                    downloadIndicator.innerText = "";
+                }, 5000);
+            }
+        }, 1000);
+    }
+
+    // Function to populate form fields with data
+    function populateFormFields(data) {
+        document.getElementById("first_name").value = data.firstName || "";
+        document.getElementById("last_name").value = data.lastName || "";
+        document.getElementById("date_of_birth").value = data.dob || "";
+        document.getElementById("phone_number").value = data.phone || "";
+        document.getElementById("email_address").value = data.email || "";
+        document.getElementById("mailing_address").value = data.address || "";
+        document.getElementById("postal_code").value = data.postalCode || "";
+        document.getElementById("number_of_plots").value = data.plots || "";
+
+        // Check the radio buttons based on stored IDs
+        document.getElementById(data.markerOption).checked = true;
+        document.getElementById(data.burialMethod).checked = true;
+        document.getElementById(data.graveLocation).checked = true;
+        document.getElementById(data.inscriptionOption).checked = true;
+
+        document.getElementById("message").value = data.wishes || "";
+        document.getElementById("addition_note").value = data.notes || "";
+    }
+
+    // Function to get default data (replace with your default values)
+    function getDefaultData() {
+        return {
+            firstName: "John",
+            lastName: "Doe",
+            dob: "2000-01-01",
+            phone: "",
+            email: "",
+            address: "",
+            postalCode: "",
+            plots: "1",
+            markerOption: "markers_option_1",
+            burialMethod: "burial_method_1",
+            graveLocation: "grave_location_1",
+            inscriptionOption: "inscription_option_1",
+            wishes: "",
+            notes: ""
+        };
+    }
+
+    // Event listener for form submission
+    document.querySelector("form").addEventListener("submit", handleFormSubmission);
+
+    // Event listener for upload button
+    uploadButton.addEventListener("click", function () {
+        uploadData();
     });
 
-    // Download Button Event Listener
-    document.getElementById("downloadButton").addEventListener("click", function () {
+    // Event listener for download button
+    downloadButton.addEventListener("click", function () {
         downloadData();
     });
-    
-    // Populate form fields with stored data or default values on page load
-    populateFormWithData(globalData);
+
+    // Populate form fields with stored data on page load
+    const storedData = JSON.parse(localStorage.getItem("formData"));
+    if (storedData) {
+        globalData = storedData;
+        populateFormFields(globalData);
+    }
 });
-
-// Function to upload data to the server
-function uploadData(data) {
-    fetch('http://ugdev.cs.smu.ca/upload', { // Updated server URL
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-    })
-    .then(response => {
-        if (response.ok) {
-            console.log('Data uploaded successfully');
-        } else {
-            console.error('Failed to upload data');
-        }
-    })
-    .catch(error => {
-        console.error('Error uploading data:', error);
-    });
-}
-
-// Function to download data from the server and populate the webpage
-function downloadData() {
-    fetch('http://ugdev.cs.smu.ca/download') // Updated server URL
-    .then(response => response.json())
-    .then(data => {
-        globalData = data; // Update global data
-        populateFormWithData(data); // Populate form with downloaded data
-        console.log('Data downloaded successfully');
-    })
-    .catch(error => {
-        console.error('Error downloading data:', error);
-    });
-}
-// Function to show upload indicator
-function showUploadIndicator() {
-    const uploadIndicator = document.getElementById('uploadIndicator');
-    uploadIndicator.textContent = 'Data uploaded!';
-    uploadIndicator.style.color = 'green';
-}
-
-// Function to show download indicator
-function showDownloadIndicator() {
-    const downloadIndicator = document.getElementById('downloadIndicator');
-    downloadIndicator.textContent = 'Data downloaded!';
-    downloadIndicator.style.color = 'blue';
-}
-
-// Function to populate form fields with data
-function populateFormWithData(data) {
-    document.getElementById("first_name").value = data.firstName || "";
-    document.getElementById("last_name").value = data.lastName || "";
-    document.getElementById("date_of_birth").value = data.dob || "";
-    document.getElementById("phone_number").value = data.phone || "";
-    document.getElementById("email_address").value = data.email || "";
-    document.getElementById("mailing_address").value = data.address || "";
-    document.getElementById("postal_code").value = data.postalCode || "";
-    document.getElementById("number_of_plots").value = data.plots || "";
-
-    // Check the radio buttons based on stored IDs
-    document.getElementById(data.markerOption).checked = true;
-    document.getElementById(data.burialMethod).checked = true;
-    document.getElementById(data.graveLocation).checked = true;
-    document.getElementById(data.inscriptionOption).checked = true;
-
-    document.getElementById("message").value = data.wishes || "";
-    document.getElementById("addition_note").value = data.notes || "";
-}
