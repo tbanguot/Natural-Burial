@@ -1,3 +1,10 @@
+       /**
+        * Purpose:
+        * This file contains functions related to managing the theme (dark mode/light mode) using local storage.
+        * 
+        * Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bhalla, Marko Ostrovista]
+        */
+       
         // //Check localStorage
         // let darkOn = false;
         // if (localStorage.getItem('dark')) {
@@ -20,6 +27,8 @@
         // }
         // }
 
+
+        // Event listener for toggling theme
         const setTheme = document.querySelector('.toggleBtn');
 
         setTheme.addEventListener('click', () => {

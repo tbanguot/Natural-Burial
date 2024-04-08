@@ -1,3 +1,12 @@
+/**
+ * FILE HEADER
+ * 
+ * Purpose:
+ * This file contains functions related to form submission and handling of mandatory fields.
+ * 
+ * Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bhalla, Marko Ostrovista]-->
+ */
+
 document.addEventListener("DOMContentLoaded", function () {
     const submitButton = document.querySelector("button[type='submit']");
 
@@ -19,13 +28,32 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-        // If any mandatory fields are missing, scroll to the first missing field and display an alert message
-        if (missingFields.length > 0) {
-            const firstMissingField = document.getElementById(missingFields[0]);
-            firstMissingField.scrollIntoView({ behavior: "smooth", block: "center" });
-            playText('ping');
-            return; // Exit the function to prevent form submission
-        }
+         // Check if all radio button fields are selected
+         const radioFields = ["markers_option", "burial_method", "grave_location", "inscription_option"];
+         let missingRadioFields = [];
+ 
+         radioFields.forEach(fieldName => {
+             const checkedRadio = document.querySelector(`input[name="${fieldName}"]:checked`);
+             if (!checkedRadio) {
+                 missingRadioFields.push(fieldName);
+                 document.querySelector(`input[name="${fieldName}"]`).classList.add("highlight-radio");
+             } else {
+                 document.querySelector(`input[name="${fieldName}"]`).classList.remove("highlight-radio");
+             }
+         });
+ 
+         // If any mandatory fields are missing or radio button fields are not selected, scroll to the first missing.
+         if (missingFields.length > 0 || missingRadioFields.length > 0) {
+             if (missingFields.length > 0) {
+                 const firstMissingField = document.getElementById(missingFields[0]);
+                 firstMissingField.scrollIntoView({ behavior: "smooth", block: "center" });
+             } else if (missingRadioFields.length > 0) {
+                 const firstMissingRadioField = document.querySelector(`input[name="${missingRadioFields[0]}"]`);
+                 firstMissingRadioField.scrollIntoView({ behavior: "smooth", block: "center" });
+             }
+             playText('ping'); 
+             return; // Exit the function to prevent form submission
+         }
 
         // Get form values if all mandatory fields are filled
         const formData = {
@@ -79,6 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("addition_note").value = storedData.notes || "";
     }
 });
+
 
 // Highlight mandatory fields that are not filled
 document.querySelectorAll("input[required], textarea[required]").forEach(input => {
