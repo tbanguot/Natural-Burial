@@ -114,15 +114,15 @@ document.addEventListener("DOMContentLoaded", function () {
             dob: "2000-01-01",
             phone: "999999999",
             email: "",
-            address: "",
+            address: "123 Main Ave",
             postalCode: "",
             plots: "1",
             markerOption: "markers_option_1",
             burialMethod: "burial_method_1",
             graveLocation: "grave_location_1",
             inscriptionOption: "inscription_option_1",
-            wishes: "",
-            notes: ""
+            wishes: "hello",
+            notes: "hello"
         };
     }
 
