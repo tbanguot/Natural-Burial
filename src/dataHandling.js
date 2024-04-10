@@ -146,3 +146,36 @@ document.addEventListener("DOMContentLoaded", function () {
         populateFormFields(globalData);
     }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const clearButton = document.getElementById("clearButton");
+
+    // Function to handle form clearing
+    clearButton.addEventListener("click", function () {
+        // Reset all input fields to their default values or empty strings
+        document.getElementById("first_name").value = "";
+        document.getElementById("last_name").value = "";
+        document.getElementById("date_of_birth").value = "";
+        document.getElementById("phone_number").value = "";
+        document.getElementById("email_address").value = "";
+        document.getElementById("mailing_address").value = "";
+        document.getElementById("postal_code").value = "";
+        document.getElementById("number_of_plots").value = "";
+
+        // Reset radio buttons
+        const radioButtons = document.querySelectorAll("input[type='radio']");
+        radioButtons.forEach((radio) => {
+            radio.checked = false;
+        });
+
+        // Reset textareas
+        document.getElementById("message").value = "";
+        document.getElementById("addition_note").value = "";
+
+        // Optionally, you can also clear the local storage here if needed
+        localStorage.removeItem("formData");
+
+        // Optionally, you can display a message to indicate that the form has been cleared
+        alert("Form cleared successfully!");
+    });
+});
