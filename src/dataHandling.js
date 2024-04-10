@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
             firstName: "John",
             lastName: "Doe",
             dob: "2000-01-01",
-            phone: "",
+            phone: "999999999",
             email: "",
             address: "",
             postalCode: "",
