@@ -1,4 +1,4 @@
-/** This file ...
+/** This file provides JavaScript functionality for the submit button.
  * 
  *  Authors: Sameh, Marko
  */
