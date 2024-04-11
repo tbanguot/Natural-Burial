@@ -44,37 +44,42 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Function to handle data upload
-    function uploadData() {
-        // Data to upload
-        const formData = JSON.stringify(globalData);
-    
-        // AJAX request to upload data
-        fetch('http://ugdev.cs.smu.ca/upload', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: formData,
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            // Show upload indicator
-            uploadIndicator.innerText = "Data uploaded successfully";
-            setTimeout(() => {
-                uploadIndicator.innerText = "";
-            }, 3000);
-        })
-        .catch(error => {
-            console.error('There was a problem with the upload:', error);
-            // Show error message
-            uploadIndicator.innerText = "Error uploading data";
-            setTimeout(() => {
-                uploadIndicator.innerText = "";
-            }, 3000);
-        });
+function uploadData() {
+    // Get data from local storage
+    const formData = JSON.parse(localStorage.getItem("formData"));
+
+    if (!formData) {
+        console.error("No data available to upload.");
+        return;
     }
+
+    // AJAX request to upload data
+    fetch('http://ugdev.cs.smu.ca/upload', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData), // Upload the data from local storage
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        // Show upload indicator
+        uploadIndicator.innerText = "Data uploaded successfully";
+        setTimeout(() => {
+            uploadIndicator.innerText = "";
+        }, 3000);
+    })
+    .catch(error => {
+        console.error('There was a problem with the upload:', error);
+        // Show error message
+        uploadIndicator.innerText = "Error uploading data";
+        setTimeout(() => {
+            uploadIndicator.innerText = "";
+        }, 3000);
+    });
+}
 
     // Function to handle data download
 function downloadData() {
