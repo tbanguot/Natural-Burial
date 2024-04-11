@@ -42,8 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const radioButton = document.querySelector(`input[name="${groupName}"]:checked`);
         return radioButton ? radioButton.id : ""; // Return the ID of the checked radio button, or an empty string if none is checked
     }
-
-    // Function to handle data upload
+// Function to handle data upload
 function uploadData() {
     // Get data from local storage
     const formData = JSON.parse(localStorage.getItem("formData"));
@@ -74,10 +73,10 @@ function uploadData() {
     .catch(error => {
         console.error('There was a problem with the upload:', error);
         // Show error message
-        uploadIndicator.innerText = "Error uploading data";
+        uploadIndicator.innerText = "Error uploading data: " + error.message;
         setTimeout(() => {
             uploadIndicator.innerText = "";
-        }, 3000);
+        }, 5000);
     });
 }
 
