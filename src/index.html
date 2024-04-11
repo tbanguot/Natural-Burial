@@ -595,15 +595,21 @@ Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bha
           Submit Form
         </button> <br> <br>
         <!-- Post request -->
-        <button type="button" class="text-white bg-green-700 hover:bg-green-800 focus:outline-none font-medium rounded-lg 
+        <button type="button" id="uploadButton" class="text-white bg-green-700 hover:bg-green-800 focus:outline-none font-medium rounded-lg 
                 text-2xl px-5 py-3 text-center" onclick="post()">
             Upload
         </button>           
         <!-- Get request -->
-        <button type="button" class="text-white bg-red-700 hover:bg-red-800 focus:outline-none font-medium rounded-lg 
+        <button type="button" id="downloadButton" class="text-white bg-red-700 hover:bg-red-800 focus:outline-none font-medium rounded-lg 
                 text-2xl px-5 py-3 text-center ml-2" onclick="get()">
             Download
-        </button> 
+        </button> <br> <br>
+        <button type="button" id="clearButton" class="text-white bg-blue-700 hover:bg-red-800 focus:ring-4 
+                focus:outline-none focus:ring-red-300 font-medium rounded-lg text-3xl px-5 py-2.5 text-center">
+            Clear Form
+        </button>
+        <div id="uploadIndicator"></div>
+        <div id="downloadIndicator"></div>
       </form>
     </main>
   </body>
@@ -611,6 +617,8 @@ Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bha
   <script src="submit.js"></script>
   <!-- Dark/lightmode javaScript-->
   <script src="main.js"></script>
+  <!-- Data handling JavaScript file -->
+  <script src="dataHandling.js"></script>
   <!--Audio player javascript-->
   <script src="TTS.js"></script>
   <!--Placeholder for audio player-->
