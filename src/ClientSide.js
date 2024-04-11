@@ -5,18 +5,18 @@
 
 const SERVER_URL = "http://ugdev.cs.smu.ca:3078";
 
-/** This function posts the data JSON obj to the server. 
+/** This function posts the JSON obj data to the server. 
  * 
  */
 function post() {
 
 }
 
-/** This function gets the data JSON obj from the server.
+/** This function gets the JSON obj data from the server.
  * 
  */
 function get() {
-
+    
 }
 
 /*
