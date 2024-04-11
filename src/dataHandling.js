@@ -45,45 +45,67 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Function to handle data upload
     function uploadData() {
-        // Simulate data upload to the server (replace with actual server interaction)
-        setTimeout(() => {
+        // Data to upload
+        const formData = JSON.stringify(globalData);
+    
+        // AJAX request to upload data
+        fetch('http://ugdev.cs.smu.ca/upload', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: formData,
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
             // Show upload indicator
             uploadIndicator.innerText = "Data uploaded successfully";
             setTimeout(() => {
                 uploadIndicator.innerText = "";
             }, 3000);
-        }, 1000);
+        })
+        .catch(error => {
+            console.error('There was a problem with the upload:', error);
+            // Show error message
+            uploadIndicator.innerText = "Error uploading data";
+            setTimeout(() => {
+                uploadIndicator.innerText = "";
+            }, 3000);
+        });
     }
 
     // Function to handle data download
-    function downloadData() {
-        // Simulate data download from the server (replace with actual server interaction)
+function downloadData() {
+    // AJAX request to download data
+    fetch('http://ugdev.cs.smu.ca/download')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Populate webpage with downloaded data and update globalData
+        globalData = data;
+        populateFormFields(globalData);
+
+        // Show download indicator
+        downloadIndicator.innerText = "Data downloaded successfully";
         setTimeout(() => {
-            // Populate webpage with downloaded data and update globalData
-            const storedData = JSON.parse(localStorage.getItem("formData"));
-            if (storedData) {
-                globalData = storedData;
-                populateFormFields(globalData);
-
-                // Show download indicator
-                downloadIndicator.innerText = "Data downloaded successfully";
-                setTimeout(() => {
-                    downloadIndicator.innerText = "";
-                }, 3000);
-            } else {
-                // If no data is available on the server, use default values and update globalData
-                const defaultData = getDefaultData(); // Function to get default data
-                globalData = defaultData;
-                populateFormFields(globalData);
-
-                // Show download indicator
-                downloadIndicator.innerText = "No data available on the server. Using default values.";
-                setTimeout(() => {
-                    downloadIndicator.innerText = "";
-                }, 5000);
-            }
-        }, 1000);
-    }
+            downloadIndicator.innerText = "";
+        }, 3000);
+    })
+    .catch(error => {
+        console.error('There was a problem with the download:', error);
+        // Show error message
+        downloadIndicator.innerText = "Error downloading data";
+        setTimeout(() => {
+            downloadIndicator.innerText = "";
+        }, 3000);
+    });
+}
 
     // Function to populate form fields with data
     function populateFormFields(data) {
