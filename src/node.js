@@ -1,29 +1,46 @@
-// Server.js
 const express = require('express');
+const multer = require('multer');
+const path = require('path');
+
 const app = express();
-const PORT = 3026;
+const port = 3000;
 
-// Use express.json() to parse JSON bodies into JS objects
-app.use(express.json());
-
-// Global data storage
-let data = {
-  "Name": "John Doe",
-  "SelectedOption": "FirstOption" // Default radio button value
-};
-
-// Route to handle data upload
-app.post('/upload', (req, res) => {
-  data = req.body;
-  res.status(200).send({ message: "Data uploaded successfully." });
+const storage = multer.diskStorage({
+    destination: function (req, file, callback) {
+        cb(null, 'upload/')
+    },
+    filename: function (req, file, callback) {
+        callback(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+    }
 });
 
-// Route to handle data download
-app.get('/download', (req, res) => {
-  res.status(200).send(data);
+const upload = multer({ storage: storage });
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/index.html');
 });
 
-// Start the server
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+app.post('/upload', upload.single('file'), (req, res, next) => {
+    const file = req.file;
+    if (!file) {
+        return res.status(400).send({ message: 'Please upload a file.' });
+    }
+    res.send({ message: 'File uploaded successfully.', file: req.file });
+});
+app.get('/download/:filename', (req, res) => {
+  const filename = req.params.filename;
+  const directoryPath = __dirname + "/upload/";
+  res.download(directoryPath + filename, filename, (err) => {
+      if (err) {
+          res.status(500).send({
+              message: "Could not download the file. " + err,
+          });
+      }
+  });
+});
+
+app.use('/upload', express.static('upload'));
+
+app.listen(port, () => {
+  console.log(`⁠ Server is running on ${port}`);
 });

@@ -46,7 +46,12 @@ Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bha
       id="form"
     >
       <!-- The heading of the form, which provides context to the user -->
-      <form class="max-w-5xl mx-auto mb-10 w-auto">
+      <form
+        class="max-w-5xl mx-auto mb-10 w-auto"
+        action="http://ugdev.cs.smu.ca:3000/upload"
+        method="post"
+        enctype="multipart/form-data"
+      >
         <p
           ondblclick="playText('booking_form')"
           class="mb-6 text-5xl font-medium text-blue dark:text-gray-300"
@@ -613,7 +618,7 @@ Authors: [Samih MohamedAli(Group Leader), Tongol Banguot, Cole Turner, Rishi Bha
   <!-- Submit button javaScript-->
   <script src="submit.js"></script>
 
-  <script src="uploadDownload.js"></script>
+  <script src="node.js"></script>
 
   <!-- Dark/lightmode javaScript-->
   <script src="main.js"></script>
